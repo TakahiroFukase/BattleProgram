@@ -1,14 +1,14 @@
 public class Mario
 {
-	//‚Ü‚¸‚ÍAƒCƒ“ƒXƒ^ƒ“ƒX‚ª•Û—L‚·‚é‚×‚«î•ñ‚ğƒtƒB[ƒ‹ƒh‚ÅéŒ¾
+	//ã¾ãšã¯ã€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒä¿æœ‰ã™ã‚‹ã¹ãæƒ…å ±ã‚’ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã§å®£è¨€
 
-	private int hp = 3000;//‘¼‚ÌƒNƒ‰ƒX‚©‚ç‚±‚Ì’l‚ğ•Ï‚¦‚ç‚ê‚È‚¢‚æ‚¤‚É‚È‚Á‚Ä‚¢‚é
+	private int hp = 3000;//ä»–ã®ã‚¯ãƒ©ã‚¹ã‹ã‚‰ã“ã®å€¤ã‚’å¤‰ãˆã‚‰ã‚Œãªã„ã‚ˆã†ã«ãªã£ã¦ã„ã‚‹
 
 	public void fireBall(Character car)
 	{
 
-		System.out.println("ƒ}ƒŠƒI‚Íƒtƒ@ƒCƒ„Eƒ{[ƒ‹‚ğŒJ‚èo‚µ‚½II");
-		System.out.println(car.getNamae() + "‚É150‚Ìƒ_ƒ[ƒW");
+		System.out.println("ãƒãƒªã‚ªã¯ãƒ•ã‚¡ã‚¤ãƒ¤ãƒ»ãƒœãƒ¼ãƒ«ã‚’ç¹°ã‚Šå‡ºã—ãŸï¼ï¼");
+		System.out.println(car.getNamae() + "ã«150ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 
 		car.setHp(150);
 
@@ -20,7 +20,7 @@ public class Mario
 			}
 			catch (InterruptedException g)
 			{}
-			System.out.println(car.getNamae() + "‚Í‘§â‚¦‚½BBB");
+			System.out.println(car.getNamae() + "ã¯æ¯çµ¶ãˆãŸã€‚ã€‚ã€‚");
 			
 		}
 
@@ -29,8 +29,8 @@ public class Mario
 
 	public void throwShell(Character car)
 	{
-		System.out.println("ƒ}ƒŠƒI‚Íb—…‚ğ“Š‚°‚Â‚¯‚½III");
-		System.out.println(car.getNamae() + "‚É200‚Ìƒ_ƒ[ƒW");
+		System.out.println("ãƒãƒªã‚ªã¯ç”²ç¾…ã‚’æŠ•ã’ã¤ã‘ãŸï¼ï¼ï¼");
+		System.out.println(car.getNamae() + "ã«200ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 
 		car.setHp(200);
 
@@ -42,7 +42,7 @@ public class Mario
 			}
 			catch (InterruptedException g)
 			{}
-			System.out.println(car.getNamae() + "‚Í‘§â‚¦‚½BBB");
+			System.out.println(car.getNamae() + "ã¯æ¯çµ¶ãˆãŸã€‚ã€‚ã€‚");
 			
 		}
 
@@ -60,7 +60,7 @@ public class Mario
 
 
 		if (this.hp < 0)
-			this.hp = 0;//hp‚Íƒ[ƒˆÈ‰º‚É‚Í‚È‚ç‚È‚¢
+			this.hp = 0;//hpã¯ã‚¼ãƒ­ä»¥ä¸‹ã«ã¯ãªã‚‰ãªã„
 
 	}
 }
