@@ -1,8 +1,8 @@
 public class Wizard implements Character
 {
 	private int hp = 800;
-	private int mp = 0;//•KE‹Z‚Í3‚½‚Ü‚é‚Æg‚¦‚é
-	private String namae = "–‚–@g‚¢";
+	private int mp = 0;//å¿…æ®ºæŠ€ã¯3ãŸã¾ã‚‹ã¨ä½¿ãˆã‚‹
+	private String namae = "é­”æ³•ä½¿ã„";
 
 
 	public int selectAttack()
@@ -13,8 +13,8 @@ public class Wizard implements Character
 			boolean correct = true;
 			do
 			{
-				System.out.println("–‚–@g‚¢‚ÌUŒ‚‚ğ‘I‘ğ");
-				System.out.println("ñ‚Å‚½‚½‚­¨‚P@W’†‚·‚é¨‚Q : ");
+				System.out.println("é­”æ³•ä½¿ã„ã®æ”»æ’ƒã‚’é¸æŠ");
+				System.out.println("æ–ã§ãŸãŸãâ†’ï¼‘ã€€é›†ä¸­ã™ã‚‹â†’ï¼’ : ");
 				input = new java.util.Scanner(System.in).nextInt();
 
 				if (input == 1 || input == 2)
@@ -23,8 +23,8 @@ public class Wizard implements Character
 		}
 		if (this.mp >= 3)
 		{
-			System.out.println("–‚–@g‚¢‚ÌUŒ‚‚ğ‘I‘ğ");
-			System.out.println("ñ‚Å‚½‚½‚­¨‚P@W’†‚·‚é¨‚Q Œõü‚ğ•ú‚Â¨‚R : ");
+			System.out.println("é­”æ³•ä½¿ã„ã®æ”»æ’ƒã‚’é¸æŠ");
+			System.out.println("æ–ã§ãŸãŸãâ†’ï¼‘ã€€é›†ä¸­ã™ã‚‹â†’ï¼’ å…‰ç·šã‚’æ”¾ã¤â†’ï¼“ : ");
 			input = new java.util.Scanner(System.in).nextInt();
 			
 		}
@@ -48,35 +48,35 @@ public class Wizard implements Character
 
 	public void attack1(Mario mar)
 	{
-		System.out.println("–‚–@g‚¢‚Íñ‚ÅUŒ‚I");
-		System.out.println("ƒ}ƒŠƒI‚É50‚Ìƒ_ƒ[ƒW");
+		System.out.println("é­”æ³•ä½¿ã„ã¯æ–ã§æ”»æ’ƒï¼");
+		System.out.println("ãƒãƒªã‚ªã«50ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 		mar.setHp(50);
 	}
 
 	public void attack2(Mario mar)
 	{
-		System.out.println("–‚–@g‚¢‚Íñæ‚ÉˆÓ¯‚ğW’†‚³‚¹‚½B");
+		System.out.println("é­”æ³•ä½¿ã„ã¯æ–å…ˆã«æ„è­˜ã‚’é›†ä¸­ã•ã›ãŸã€‚");
 
 		if (this.mp < 2)
 		{
 			this.mp++;
-			System.out.println("‚ä‚Á‚­‚è‚Æñæ‚É—Í‚ª‚½‚Ü‚Á‚Ä‚«‚Ä‚¢‚éBB");
+			System.out.println("ã‚†ã£ãã‚Šã¨æ–å…ˆã«åŠ›ãŒãŸã¾ã£ã¦ãã¦ã„ã‚‹ã€‚ã€‚");
 		}
 		else if (this.mp == 2)
 		{
 			this.mp++;
-			System.out.println("ñæ‚ªŒƒ‚µ‚­Œõ‚èn‚ß‚½III");
+			System.out.println("æ–å…ˆãŒæ¿€ã—ãå…‰ã‚Šå§‹ã‚ãŸï¼ï¼ï¼");
 		}
 		else if (this.mp > 2)
-			System.out.println("ñæ‚Í‚·‚Å‚ÉŒõ‚Á‚Ä‚¢‚éB");
+			System.out.println("æ–å…ˆã¯ã™ã§ã«å…‰ã£ã¦ã„ã‚‹ã€‚");
 	}
 
 	public void specialAttack(Mario mar)
 	{
 		this.mp = 0;
 		int damage = 0;
-		System.out.println("–‚–@g‚¢‚ÍŒõü‚ğ•ú‚Á‚½II");
-		System.out.println("Œõü‚Í‘å”š”­‚ğ‹N‚±‚µ‚½III");
+		System.out.println("é­”æ³•ä½¿ã„ã¯å…‰ç·šã‚’æ”¾ã£ãŸï¼ï¼");
+		System.out.println("å…‰ç·šã¯å¤§çˆ†ç™ºã‚’èµ·ã“ã—ãŸï¼ï¼ï¼");
 		int r = new java.util.Random().nextInt(3) + 1;
 		switch (r)
 		{
@@ -89,7 +89,7 @@ public class Wizard implements Character
 			case 3:
 				damage = 720;
 		}
-		System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
+		System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 		mar.setHp(damage);
 	}
 

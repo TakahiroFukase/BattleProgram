@@ -4,22 +4,22 @@ import javax.swing.JOptionPane;
 
 public class Ebiwara extends Thread implements Character
 {
-	private int hp = 1000;//‘¼‚ÌƒNƒ‰ƒX‚©‚ç‚±‚Ì’l‚ğ•Ï‚¦‚ç‚ê‚È‚¢‚æ‚¤‚É‚È‚Á‚Ä‚¢‚é
+	private int hp = 1000;//ä»–ã®ã‚¯ãƒ©ã‚¹ã‹ã‚‰ã“ã®å€¤ã‚’å¤‰ãˆã‚‰ã‚Œãªã„ã‚ˆã†ã«ãªã£ã¦ã„ã‚‹
 
-	private String namae = "ƒGƒrƒƒ‰[";
+	private String namae = "ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼";
 
 	private boolean anounce = true;
 
 
 	public int selectAttack()
 	{
-		System.out.println("ƒGƒrƒƒ‰[‚ÌUŒ‚‚ğ‘I‘ğ");
+		System.out.println("ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã®æ”»æ’ƒã‚’é¸æŠ");
 		int input = 0;
 		
 		if (this.hp >= 500)
 		{
 
-				System.out.print("ƒtƒ@ƒCƒAEƒpƒ“ƒ`¨‚P@‚©‚İ‚È‚èƒpƒ“ƒ`¨‚Q : ");
+				System.out.print("ãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒ‘ãƒ³ãƒâ†’ï¼‘ã€€ã‹ã¿ãªã‚Šãƒ‘ãƒ³ãƒâ†’ï¼’ : ");
 				input = new java.util.Scanner(System.in).nextInt();
 				if (!(input == 1 || input == 2))
 				{
@@ -29,7 +29,7 @@ public class Ebiwara extends Thread implements Character
 		}
 		else
 		{
-			System.out.print("ƒtƒ@ƒCƒAEƒpƒ“ƒ`¨‚P@‚©‚İ‚È‚èƒpƒ“ƒ`¨‚Q@˜A‘±ƒpƒ“ƒ`¨‚R : ");
+			System.out.print("ãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒ‘ãƒ³ãƒâ†’ï¼‘ã€€ã‹ã¿ãªã‚Šãƒ‘ãƒ³ãƒâ†’ï¼’ã€€é€£ç¶šãƒ‘ãƒ³ãƒâ†’ï¼“ : ");
 			input = new java.util.Scanner(System.in).nextInt();
 			if (! (input == 1 || input == 2 || input == 3))
 			{
@@ -61,12 +61,12 @@ public class Ebiwara extends Thread implements Character
 	public void attack1(Mario mar)
 	{
 		int damage = 0;
-		System.out.println("ƒGƒrƒƒ‰[‚Ìƒtƒ@ƒCƒAEƒpƒ“ƒ`III");
+		System.out.println("ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã®ãƒ•ã‚¡ã‚¤ã‚¢ãƒ»ãƒ‘ãƒ³ãƒï¼ï¼ï¼");
 
 		int r = new java.util.Random().nextInt(50) + 1;
 		damage = 120 + r;
-		System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
-		mar.setHp(damage);//‚±‚±‚ÅMario‚Ìsetter‚©‚çAMario‚Ìhp‚ÉƒAƒNƒZƒX‚·‚é
+		System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
+		mar.setHp(damage);//ã“ã“ã§Marioã®setterã‹ã‚‰ã€Marioã®hpã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹
 	}
 
 
@@ -74,7 +74,7 @@ public class Ebiwara extends Thread implements Character
 	{
 
 		int damage = 0;
-		System.out.println("ƒGƒrƒƒ‰[‚Ì‚©‚İ‚È‚èƒpƒ“ƒ`III");
+		System.out.println("ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã®ã‹ã¿ãªã‚Šãƒ‘ãƒ³ãƒï¼ï¼ï¼");
 		int r = new java.util.Random().nextInt(2) + 1;
 		switch (r)
 		{
@@ -85,7 +85,7 @@ public class Ebiwara extends Thread implements Character
 				damage = 250;
 				break;
 		}
-		System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
+		System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 		mar.setHp(damage);
 	}
 
@@ -93,7 +93,7 @@ public class Ebiwara extends Thread implements Character
 	public void specialAttack(Mario mar)
 	{
 		int damage = 0;
-		System.out.println("ƒGƒrƒƒ‰[‚Í˜A‘±ƒpƒ“ƒ`‚ğŒJ‚èo‚µ‚½I");
+		System.out.println("ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã¯é€£ç¶šãƒ‘ãƒ³ãƒã‚’ç¹°ã‚Šå‡ºã—ãŸï¼");
 		for(int i = 3; i > 0; i--)
 		{
 			System.out.println(i);
@@ -135,24 +135,24 @@ public class Ebiwara extends Thread implements Character
 			if (duration < 2)
 				{
 					damage = 350;
-					System.out.println("ƒpƒ“ƒ`‚Í7‰ñƒqƒbƒg‚µ‚½III");
-					System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
+					System.out.println("ãƒ‘ãƒ³ãƒã¯7å›ãƒ’ãƒƒãƒˆã—ãŸï¼ï¼ï¼");
+					System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 				}
 				else if (duration < 4)
 				{
 					damage = 300;
-					System.out.println("ƒpƒ“ƒ`‚Í5‰ñƒqƒbƒg‚µ‚½III");
-					System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
+					System.out.println("ãƒ‘ãƒ³ãƒã¯5å›ãƒ’ãƒƒãƒˆã—ãŸï¼ï¼ï¼");
+					System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 				}
 			else
 				{
 					damage = 150;
-					System.out.println("ƒpƒ“ƒ`‚Í3‰ñ‚µ‚©ƒqƒbƒg‚µ‚È‚©‚Á‚½B");
-					System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
+					System.out.println("ãƒ‘ãƒ³ãƒã¯3å›ã—ã‹ãƒ’ãƒƒãƒˆã—ãªã‹ã£ãŸã€‚");
+					System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 				}
 		}
 		else
-			System.out.println("UŒ‚‚ÍŠO‚ê‚½AAA");
+			System.out.println("æ”»æ’ƒã¯å¤–ã‚ŒãŸã€ã€ã€");
 
 		mar.setHp(damage);
 
@@ -160,7 +160,7 @@ public class Ebiwara extends Thread implements Character
 
 	public void doNothing()
 	{
-		System.out.println("ƒGƒrƒƒ‰[‚Í‚Ú[‚Á‚Æ‚µ‚Ä‚¢‚éAAA");
+		System.out.println("ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã¯ã¼ãƒ¼ã£ã¨ã—ã¦ã„ã‚‹ã€ã€ã€");
 
 	}
 
@@ -171,22 +171,22 @@ public class Ebiwara extends Thread implements Character
 		return this.hp;
 	}
 
-	public void setHp(int h)//‚±‚ê‚ªEbiwara‚Ìhp‚ğ‘€‚é‚½‚ß‚Ìsetter‚Å‚ ‚é
+	public void setHp(int h)//ã“ã‚ŒãŒEbiwaraã®hpã‚’æ“ã‚‹ãŸã‚ã®setterã§ã‚ã‚‹
 	{
 		this.hp -= h;
 
-		if (this.hp < 0)//hp‚Íƒ[ƒˆÈ‰º‚É‚Í‚È‚ç‚È‚¢
+		if (this.hp < 0)//hpã¯ã‚¼ãƒ­ä»¥ä¸‹ã«ã¯ãªã‚‰ãªã„
 			this.hp = 0;
 		if (this.hp > 1000)
 			this.hp = 1000;
 		if (this.hp < 500 && this.anounce)
 		{
-			System.out.println("\nƒGƒrƒƒ‰[‚Íu“{‚èó‘Ôv‚É‚È‚Á‚½III");
+			System.out.println("\nã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã¯ã€Œæ€’ã‚ŠçŠ¶æ…‹ã€ã«ãªã£ãŸï¼ï¼ï¼");
 			this.anounce = false;
 		}
 		if (this.hp >= 500 && (!(this.anounce)))
 		{
-			System.out.println("\nƒGƒrƒƒ‰[‚Ìu“{‚èó‘Ôv‚Í‚¨‚³‚Ü‚Á‚½B");
+			System.out.println("\nã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã®ã€Œæ€’ã‚ŠçŠ¶æ…‹ã€ã¯ãŠã•ã¾ã£ãŸã€‚");
 			this.anounce = true;
 		}
 	}

@@ -1,8 +1,8 @@
-//ƒNƒ‰ƒXAƒCƒ“ƒXƒ^ƒ“ƒX‚ ‚½‚è‚Ì˜b‚ÍÀÛ‚ÉƒvƒƒOƒ‰ƒ€‚ğì‚ç‚È‚¢‚Æ
-//ƒsƒ“‚Æ‚±‚È‚¢‚Ì‚ÅAˆÈ‰º‚Åƒoƒgƒ‹EƒvƒƒOƒ‰ƒ€‚ğì¬‚·‚éB
+//ã‚¯ãƒ©ã‚¹ã€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚ãŸã‚Šã®è©±ã¯å®Ÿéš›ã«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œã‚‰ãªã„ã¨
+//ãƒ”ãƒ³ã¨ã“ãªã„ã®ã§ã€ä»¥ä¸‹ã§ãƒãƒˆãƒ«ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œæˆã™ã‚‹ã€‚
 
-//ƒNƒ‰ƒX‚Í_—l‚ÌƒNƒ‰ƒXAƒ}ƒŠƒI‚ÌƒNƒ‰ƒXAƒGƒrƒƒ‰[‚ÌƒNƒ‰ƒX‚Ì‚R‚Â‚Åì‚Á‚Ä‚İ‚é
-//‚»‚µ‚ÄAƒ}ƒŠƒI‚ÆƒGƒrƒƒ‰[‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»‚µA_—l‚ÌƒNƒ‰ƒXã‚Å‘€ì‚·‚éB
+//ã‚¯ãƒ©ã‚¹ã¯ç¥æ§˜ã®ã‚¯ãƒ©ã‚¹ã€ãƒãƒªã‚ªã®ã‚¯ãƒ©ã‚¹ã€ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã®ã‚¯ãƒ©ã‚¹ã®ï¼“ã¤ã§ä½œã£ã¦ã¿ã‚‹
+//ãã—ã¦ã€ãƒãƒªã‚ªã¨ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã—ã€ç¥æ§˜ã®ã‚¯ãƒ©ã‚¹ä¸Šã§æ“ä½œã™ã‚‹ã€‚
 
 public class Battle3 extends Thread
 {
@@ -17,12 +17,12 @@ public class Battle3 extends Thread
 
 		boolean correct = true;
 
-		System.out.println("\ng—pƒLƒƒƒ‰ƒNƒ^[‚ğ2‘Ì‘I‘ğ");
+		System.out.println("\nä½¿ç”¨ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã‚’2ä½“é¸æŠ");
 		
 		do
 		{
-			System.out.println("yƒLƒƒƒ‰ƒNƒ^[No.1z");
-			System.out.print("ƒGƒrƒƒ‰[¨‚P@–‚–@g‚¢¨‚Q@Œ´nl¨‚R ƒtƒNƒƒE¨‚S: ");
+			System.out.println("ã€ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼No.1ã€‘");
+			System.out.print("ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼â†’ï¼‘ã€€é­”æ³•ä½¿ã„â†’ï¼’ã€€åŸå§‹äººâ†’ï¼“ ãƒ•ã‚¯ãƒ­ã‚¦â†’ï¼”: ");
 			chooseCharacter1 = new java.util.Scanner(System.in).nextInt();
 
 			if (chooseCharacter1 < 1 || chooseCharacter1 > 4)
@@ -33,8 +33,8 @@ public class Battle3 extends Thread
 
 		do
 		{
-			System.out.println("yƒLƒƒƒ‰ƒNƒ^[No.2z");
-			System.out.print("ƒGƒrƒƒ‰[¨‚P@–‚–@g‚¢¨‚Q@Œ´nl¨‚R ƒtƒNƒƒE¨‚S: ");
+			System.out.println("ã€ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼No.2ã€‘");
+			System.out.print("ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼â†’ï¼‘ã€€é­”æ³•ä½¿ã„â†’ï¼’ã€€åŸå§‹äººâ†’ï¼“ ãƒ•ã‚¯ãƒ­ã‚¦â†’ï¼”: ");
 			chooseCharacter2 = new java.util.Scanner(System.in).nextInt();
 
 			if (chooseCharacter2 < 1 || chooseCharacter2 > 4)
@@ -42,14 +42,14 @@ public class Battle3 extends Thread
 			else if (chooseCharacter1 == chooseCharacter2)
 			{	
 				correct = false;
-				System.out.println("\n“¯‚¶ƒLƒƒƒ‰ƒNƒ^[‚Íg—p‚Å‚«‚Ü‚¹‚ñBB\n");
+				System.out.println("\nåŒã˜ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã¯ä½¿ç”¨ã§ãã¾ã›ã‚“ã€‚ã€‚\n");
 			}
 			else
 				correct = true;
 		}while (!(correct));
 
 
-//‘I‘ğ‚µ‚½ƒLƒƒƒ‰ƒNƒ^[‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğì¬
+//é¸æŠã—ãŸã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆ
 
 		switch (chooseCharacter1)
 		{
@@ -90,23 +90,23 @@ public class Battle3 extends Thread
 
 		Mario m = new Mario();
 
-		System.out.println("\n“G‚Ìƒ}ƒŠƒI‚ªŒ»‚ê‚½III");
+		System.out.println("\næ•µã®ãƒãƒªã‚ªãŒç¾ã‚ŒãŸï¼ï¼ï¼");
 
 
-		while (!(c1.getHp() <= 0 && c2.getHp() <= 0) || (m.getHp() <= 0))//Ÿ•‰‚ª‘±‚­ŒÀ‚èi—¼Ò‚Æ‚à¶‚«‚Ä‚¢‚éŒÀ‚èjˆÈ‰º‚Ìƒ‹[ƒv‚ğŒJ‚è•Ô‚·
+		while (!(c1.getHp() <= 0 && c2.getHp() <= 0) || (m.getHp() <= 0))//å‹è² ãŒç¶šãé™ã‚Šï¼ˆï¼ä¸¡è€…ã¨ã‚‚ç”Ÿãã¦ã„ã‚‹é™ã‚Šï¼‰ä»¥ä¸‹ã®ãƒ«ãƒ¼ãƒ—ã‚’ç¹°ã‚Šè¿”ã™
 		{
 
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			System.out.println("ƒ}ƒŠƒIHPF" + m.getHp() + "\n");
-			System.out.println(c1.getNamae() + "HPF" + c1.getHp() + "  " + c2.getNamae() + "HPF" + c2.getHp());
+			System.out.println("ãƒãƒªã‚ªHPï¼š" + m.getHp() + "\n");
+			System.out.println(c1.getNamae() + "HPï¼š" + c1.getHp() + "  " + c2.getNamae() + "HPï¼š" + c2.getHp());
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
 			
-			int x = 0;//c1‚Ì‘I‘ğ‚³‚ê‚½UŒ‚‚Ì”Ô†‚ğ“ü‚ê‚é•Ï”
-			int y = 0;//c2‚Ì‘I‘ğ‚³‚ê‚½UŒ‚‚Ì”Ô†‚ğ“ü‚ê‚é•Ï”
+			int x = 0;//c1ã®é¸æŠã•ã‚ŒãŸæ”»æ’ƒã®ç•ªå·ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
+			int y = 0;//c2ã®é¸æŠã•ã‚ŒãŸæ”»æ’ƒã®ç•ªå·ã‚’å…¥ã‚Œã‚‹å¤‰æ•°
 
 			if (c1.getHp() > 0)
 			{
-				x = c1.selectAttack();//x‚É‚Í1~3(Ebiwara‚Í‚S‚à)‚Ì‚¢‚¸‚ê‚©‚ª“ü‚é
+				x = c1.selectAttack();//xã«ã¯1~3(Ebiwaraã¯ï¼”ã‚‚)ã®ã„ãšã‚Œã‹ãŒå…¥ã‚‹
 				System.out.println(" ");
 			}
 			if (c2.getHp() > 0)
@@ -165,7 +165,7 @@ public class Battle3 extends Thread
 				
 
 			if (r == 1)
-				m.fireBall(c1);//miƒ}ƒŠƒIj‚ÌUŒ‚‚ğˆø‚«o‚µAeiƒGƒrƒƒ‰[j‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é‚Æ‚¢‚¤ˆê•¶
+				m.fireBall(c1);//mï¼ˆãƒãƒªã‚ªï¼‰ã®æ”»æ’ƒã‚’å¼•ãå‡ºã—ã€eï¼ˆã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ï¼‰ã«ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹ã¨ã„ã†ä¸€æ–‡
 			if (r == 2)
 				m.throwShell(c1);
 			if (r == 3)
@@ -185,19 +185,19 @@ public class Battle3 extends Thread
 		}
 
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			System.out.println("ƒ}ƒŠƒIHPF" + m.getHp() + "\n");
-			System.out.println(c1.getNamae() + "HPF" + c1.getHp() + "  " + c2.getNamae() + "HPF" + c2.getHp());
+			System.out.println("ãƒãƒªã‚ªHPï¼š" + m.getHp() + "\n");
+			System.out.println(c1.getNamae() + "HPï¼š" + c1.getHp() + "  " + c2.getNamae() + "HPï¼š" + c2.getHp());
 			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
 
 
 
 
-		//ã‚Ìƒ‹[ƒv‚Ìd‘g‚İ‚É‚æ‚èAˆÈ‰º‚Q‚Â‚Ìif\•¶‚Ì‚¤‚¿A•K‚¸‚P‚Â‚¾‚¯‚ªÀs‚³‚ê‚éB
+		//ä¸Šã®ãƒ«ãƒ¼ãƒ—ã®ä»•çµ„ã¿ã«ã‚ˆã‚Šã€ä»¥ä¸‹ï¼’ã¤ã®ifæ§‹æ–‡ã®ã†ã¡ã€å¿…ãšï¼‘ã¤ã ã‘ãŒå®Ÿè¡Œã•ã‚Œã‚‹ã€‚
 
 		if (m.getHp() == 0)
-			System.out.println(c1.getNamae() + "&" + c2.getNamae() + "‚Ìƒ`[ƒ€‚ÌŸ‚¿I");
+			System.out.println(c1.getNamae() + "&" + c2.getNamae() + "ã®ãƒãƒ¼ãƒ ã®å‹ã¡ï¼");
 		if (c1.getHp() == 0 && c2.getHp() == 0)
-			System.out.println("ƒ}ƒŠƒI‚ÌŸ‚¿I");
+			System.out.println("ãƒãƒªã‚ªã®å‹ã¡ï¼");
 		
 	}
 

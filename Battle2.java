@@ -1,19 +1,19 @@
-//ƒNƒ‰ƒXAƒCƒ“ƒXƒ^ƒ“ƒX‚ ‚½‚è‚Ì˜b‚ÍÀÛ‚ÉƒvƒƒOƒ‰ƒ€‚ğì‚ç‚È‚¢‚Æ
-//ƒsƒ“‚Æ‚±‚È‚¢‚Ì‚ÅAˆÈ‰º‚Åƒoƒgƒ‹EƒvƒƒOƒ‰ƒ€‚ğì¬‚·‚éB
+//ã‚¯ãƒ©ã‚¹ã€ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚ãŸã‚Šã®è©±ã¯å®Ÿéš›ã«ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œã‚‰ãªã„ã¨
+//ãƒ”ãƒ³ã¨ã“ãªã„ã®ã§ã€ä»¥ä¸‹ã§ãƒãƒˆãƒ«ãƒ»ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’ä½œæˆã™ã‚‹ã€‚
 
-//ƒNƒ‰ƒX‚Í_—l‚ÌƒNƒ‰ƒXAƒ}ƒŠƒI‚ÌƒNƒ‰ƒXAƒGƒrƒƒ‰[‚ÌƒNƒ‰ƒX‚Ì‚R‚Â‚Åì‚Á‚Ä‚İ‚é
-//‚»‚µ‚ÄAƒ}ƒŠƒI‚ÆƒGƒrƒƒ‰[‚ğƒCƒ“ƒXƒ^ƒ“ƒX‰»‚µA_—l‚ÌƒNƒ‰ƒXã‚Å‘€ì‚·‚éB
+//ã‚¯ãƒ©ã‚¹ã¯ç¥æ§˜ã®ã‚¯ãƒ©ã‚¹ã€ãƒãƒªã‚ªã®ã‚¯ãƒ©ã‚¹ã€ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã®ã‚¯ãƒ©ã‚¹ã®ï¼“ã¤ã§ä½œã£ã¦ã¿ã‚‹
+//ãã—ã¦ã€ãƒãƒªã‚ªã¨ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ã‚’ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã—ã€ç¥æ§˜ã®ã‚¯ãƒ©ã‚¹ä¸Šã§æ“ä½œã™ã‚‹ã€‚
 
 public class Battle2 extends Thread
 {
 
 	public static void main(String[] args)
 	{
-		System.out.println("“G‚Ìƒ}ƒŠƒI‚ªŒ»‚ê‚½I");
+		System.out.println("æ•µã®ãƒãƒªã‚ªãŒç¾ã‚ŒãŸï¼");
 
 
-		System.out.println("\ng—pƒLƒƒƒ‰ƒNƒ^[‚ğ‘I‘ğ");
-		System.out.print("ƒGƒrƒƒ‰[¨‚P@–‚–@g‚¢¨‚Q : ");
+		System.out.println("\nä½¿ç”¨ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã‚’é¸æŠ");
+		System.out.print("ã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼â†’ï¼‘ã€€é­”æ³•ä½¿ã„â†’ï¼’ : ");
 		int choice = 0;
 		do
 		{
@@ -34,16 +34,16 @@ public class Battle2 extends Thread
 		Mario m = new Mario();
 
 
-		while (c1.getHp() > 0 && m.getHp() > 0)//Ÿ•‰‚ª‘±‚­ŒÀ‚èi—¼Ò‚Æ‚à¶‚«‚Ä‚¢‚éŒÀ‚èjˆÈ‰º‚Ìƒ‹[ƒv‚ğŒJ‚è•Ô‚·
+		while (c1.getHp() > 0 && m.getHp() > 0)//å‹è² ãŒç¶šãé™ã‚Šï¼ˆï¼ä¸¡è€…ã¨ã‚‚ç”Ÿãã¦ã„ã‚‹é™ã‚Šï¼‰ä»¥ä¸‹ã®ãƒ«ãƒ¼ãƒ—ã‚’ç¹°ã‚Šè¿”ã™
 		{
 
 			System.out.println("++++++++++++++++++++++++++++++++++++++");
-			System.out.print(c1.getNamae() + "HPF" + c1.getHp() + "  ");
-			System.out.println("ƒ}ƒŠƒIHPF" + m.getHp() + "\n\n");
+			System.out.print(c1.getNamae() + "HPï¼š" + c1.getHp() + "  ");
+			System.out.println("ãƒãƒªã‚ªHPï¼š" + m.getHp() + "\n\n");
 			System.out.println("++++++++++++++++++++++++++++++++++++++");
 
 
-			int x = c1.selectAttack();//x‚É‚Í1~3‚Ì‚¢‚¸‚ê‚©‚ª“ü‚é
+			int x = c1.selectAttack();//xã«ã¯1~3ã®ã„ãšã‚Œã‹ãŒå…¥ã‚‹
 			c1.callAttack(x, m);
 			System.out.println(" ");
 
@@ -60,7 +60,7 @@ public class Battle2 extends Thread
 
 			int r = new java.util.Random().nextInt(2) + 1;
 			if (r == 1)
-				m.fireBall(c1);//miƒ}ƒŠƒIj‚ÌUŒ‚‚ğˆø‚«o‚µAeiƒGƒrƒƒ‰[j‚Éƒ_ƒ[ƒW‚ğ—^‚¦‚é‚Æ‚¢‚¤ˆê•¶
+				m.fireBall(c1);//mï¼ˆãƒãƒªã‚ªï¼‰ã®æ”»æ’ƒã‚’å¼•ãå‡ºã—ã€eï¼ˆã‚¨ãƒ“ãƒ¯ãƒ©ãƒ¼ï¼‰ã«ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’ä¸ãˆã‚‹ã¨ã„ã†ä¸€æ–‡
 			if (r == 2)
 				m.throwShell(c1);
 			System.out.println(" ");
@@ -76,17 +76,17 @@ public class Battle2 extends Thread
 		}
 
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
-		System.out.print(c1.getNamae() + "HPF" + c1.getHp() + "  ");
-		System.out.println("ƒ}ƒŠƒIHPF" + m.getHp() + "\n\n");
+		System.out.print(c1.getNamae() + "HPï¼š" + c1.getHp() + "  ");
+		System.out.println("ãƒãƒªã‚ªHPï¼š" + m.getHp() + "\n\n");
 		System.out.println("++++++++++++++++++++++++++++++++++++++");
 
 
-		//ã‚Ìƒ‹[ƒv‚Ìd‘g‚İ‚É‚æ‚èAˆÈ‰º‚Q‚Â‚Ìif\•¶‚Ì‚¤‚¿A•K‚¸‚P‚Â‚¾‚¯‚ªÀs‚³‚ê‚éB
+		//ä¸Šã®ãƒ«ãƒ¼ãƒ—ã®ä»•çµ„ã¿ã«ã‚ˆã‚Šã€ä»¥ä¸‹ï¼’ã¤ã®ifæ§‹æ–‡ã®ã†ã¡ã€å¿…ãšï¼‘ã¤ã ã‘ãŒå®Ÿè¡Œã•ã‚Œã‚‹ã€‚
 
 		if (m.getHp() == 0)
-			System.out.println(c1.getNamae() + "‚ÌŸ‚¿I");
+			System.out.println(c1.getNamae() + "ã®å‹ã¡ï¼");
 		if (c1.getHp() == 0)
-			System.out.println("ƒ}ƒŠƒI‚ÌŸ‚¿I");
+			System.out.println("ãƒãƒªã‚ªã®å‹ã¡ï¼");
 		
 	}
 

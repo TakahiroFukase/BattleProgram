@@ -4,19 +4,19 @@ import javax.swing.JOptionPane;
 
 public class Owl extends Thread implements Character
 {
-	private int hp = 800;//‘¼‚ÌƒNƒ‰ƒX‚©‚ç‚±‚Ì’l‚ğ•Ï‚¦‚ç‚ê‚È‚¢‚æ‚¤‚É‚È‚Á‚Ä‚¢‚é
+	private int hp = 800;//ä»–ã®ã‚¯ãƒ©ã‚¹ã‹ã‚‰ã“ã®å€¤ã‚’å¤‰ãˆã‚‰ã‚Œãªã„ã‚ˆã†ã«ãªã£ã¦ã„ã‚‹
 
-	private String namae = "ƒtƒNƒƒE";
+	private String namae = "ãƒ•ã‚¯ãƒ­ã‚¦";
 
 
 	public int selectAttack()
 	{
-		System.out.println("ƒtƒNƒƒE‚ÌUŒ‚‚ğ‘I‘ğ");
+		System.out.println("ãƒ•ã‚¯ãƒ­ã‚¦ã®æ”»æ’ƒã‚’é¸æŠ");
 		int input = 0;
 
 		do
 		{
-			System.out.print("—â‚½‚¢•—¨‚P@’‡ŠÔ‚ğŒÄ‚Ô¨‚Q –ü‚µ‚Ì•—¨‚R: ");
+			System.out.print("å†·ãŸã„é¢¨â†’ï¼‘ã€€ä»²é–“ã‚’å‘¼ã¶â†’ï¼’ ç™’ã—ã®é¢¨â†’ï¼“: ");
 			input = new java.util.Scanner(System.in).nextInt();
 		}while (input < 1 || input > 3);
 		return input;
@@ -40,12 +40,12 @@ public class Owl extends Thread implements Character
 
 	public void attack1(Mario mar)
 	{
-		System.out.println("ƒtƒNƒƒE‚Í—â‚½‚¢•—‚ğŠª‚«‹N‚±‚µ‚½I");
+		System.out.println("ãƒ•ã‚¯ãƒ­ã‚¦ã¯å†·ãŸã„é¢¨ã‚’å·»ãèµ·ã“ã—ãŸï¼");
 		int r = new java.util.Random().nextInt(20) + 1;
 		int damage = 100 + r;
-		System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
+		System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 
-		mar.setHp(damage);//‚±‚±‚ÅMario‚Ìsetter‚©‚çAMario‚Ìhp‚ÉƒAƒNƒZƒX‚·‚é
+		mar.setHp(damage);//ã“ã“ã§Marioã®setterã‹ã‚‰ã€Marioã®hpã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹
 	}
 
 
@@ -53,7 +53,7 @@ public class Owl extends Thread implements Character
 	{
 
 		int damage = 0;
-		System.out.println("ƒtƒNƒƒE‚Í’‡ŠÔ‚ğŒÄ‚ñ‚¾III");
+		System.out.println("ãƒ•ã‚¯ãƒ­ã‚¦ã¯ä»²é–“ã‚’å‘¼ã‚“ã ï¼ï¼ï¼");
 		int r = new java.util.Random().nextInt(5) + 1;
 		try
 		{
@@ -66,18 +66,18 @@ public class Owl extends Thread implements Character
 		{
 			case 1:
 			case 2:
-				System.out.println("‚µ‚©‚µŒÄ‚Ñº‚Í‚Æ‚Ç‚©‚È‚©‚Á‚½BB");
+				System.out.println("ã—ã‹ã—å‘¼ã³å£°ã¯ã¨ã©ã‹ãªã‹ã£ãŸã€‚ã€‚");
 				break;
 			case 3:
-				System.out.println("’‡ŠÔ‚ÌƒtƒNƒƒE‚P‰H‚ªƒ}ƒŠƒI‚É“Ëi‚µ‚½II");
+				System.out.println("ä»²é–“ã®ãƒ•ã‚¯ãƒ­ã‚¦ï¼‘ç¾½ãŒãƒãƒªã‚ªã«çªé€²ã—ãŸï¼ï¼");
 				damage = 150;
-				System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
+				System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 				break;
 			case 4:
 			case 5:
-				System.out.println("’‡ŠÔ‚ÌƒtƒNƒƒE‚Q‰H‚ªƒ}ƒŠƒI‚É“Ëi‚µ‚½II");
+				System.out.println("ä»²é–“ã®ãƒ•ã‚¯ãƒ­ã‚¦ï¼’ç¾½ãŒãƒãƒªã‚ªã«çªé€²ã—ãŸï¼ï¼");
 				damage = 250;
-				System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒW");
+				System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸");
 		}
 		mar.setHp(damage);
 	}
@@ -96,7 +96,7 @@ public class Owl extends Thread implements Character
 
 		int recover2 = (30 + r2);
 
-		System.out.println("ƒtƒNƒƒE‚Í–ü‚µ‚Ì•—‚ğŠª‚«‹N‚±‚µ‚½II");
+		System.out.println("ãƒ•ã‚¯ãƒ­ã‚¦ã¯ç™’ã—ã®é¢¨ã‚’å·»ãèµ·ã“ã—ãŸï¼ï¼");
 		try
 		{
 			Thread.sleep(1900);
@@ -104,14 +104,14 @@ public class Owl extends Thread implements Character
 		catch (InterruptedException g)
 		{}			
 
-		System.out.println(c1.getNamae() + "‚ÌHP‚ª" + recover1 + "‰ñ•œ‚µ‚½II");
+		System.out.println(c1.getNamae() + "ã®HPãŒ" + recover1 + "å›å¾©ã—ãŸï¼ï¼");
 		try
 		{
 			Thread.sleep(1000);
 		}
 		catch (InterruptedException g)
 		{}	
-		System.out.println(c2.getNamae() + "‚ÌHP‚ª" + recover2 + "‰ñ•œ‚µ‚½II");
+		System.out.println(c2.getNamae() + "ã®HPãŒ" + recover2 + "å›å¾©ã—ãŸï¼ï¼");
 
 		c1.setHp((-1) * recover1);
 		c2.setHp((-1) * recover2);
@@ -122,11 +122,11 @@ public class Owl extends Thread implements Character
 		return this.hp;
 	}
 
-	public void setHp(int h)//‚±‚ê‚ªEbiwara‚Ìhp‚ğ‘€‚é‚½‚ß‚Ìsetter‚Å‚ ‚é
+	public void setHp(int h)//ã“ã‚ŒãŒEbiwaraã®hpã‚’æ“ã‚‹ãŸã‚ã®setterã§ã‚ã‚‹
 	{
 		this.hp -= h;
 
-		if (this.hp < 0)//hp‚Íƒ[ƒˆÈ‰º‚É‚Í‚È‚ç‚È‚¢
+		if (this.hp < 0)//hpã¯ã‚¼ãƒ­ä»¥ä¸‹ã«ã¯ãªã‚‰ãªã„
 			this.hp = 0;
 		if (this.hp > 800)
 			this.hp = 800;

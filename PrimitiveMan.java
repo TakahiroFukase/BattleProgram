@@ -2,7 +2,7 @@ public class PrimitiveMan implements Character
 {
 	private int hp = 1000;
 
-	private String namae = "Œ´nl";
+	private String namae = "åŸå§‹äºº";
 
 
 	public int selectAttack()
@@ -11,8 +11,8 @@ public class PrimitiveMan implements Character
 		int input = 0;
 		do
 		{
-			System.out.println("Œ´nl‚ÌUŒ‚‚ğ‘I‘ğ");
-			System.out.println("ƒu[ƒƒ‰ƒ“UŒ‚¨‚P@Î‚ğ“Š‚°‚é¨‚Q@‚±‚ñ–_‚Å’@‚­¨‚R : ");
+			System.out.println("åŸå§‹äººã®æ”»æ’ƒã‚’é¸æŠ");
+			System.out.println("ãƒ–ãƒ¼ãƒ¡ãƒ©ãƒ³æ”»æ’ƒâ†’ï¼‘ã€€çŸ³ã‚’æŠ•ã’ã‚‹â†’ï¼’ã€€ã“ã‚“æ£’ã§å©ãâ†’ï¼“ : ");
 			input = new java.util.Scanner(System.in).nextInt();
 
 			if (input < 1 || input > 3)
@@ -35,7 +35,7 @@ public class PrimitiveMan implements Character
 				attack2(mar);
 				break;
 			case 3:
-				specialAttack(mar);//Œ´nl‚Ìê‡‚Í‚±‚ê‚à•’Ê‚ÌUŒ‚
+				specialAttack(mar);//åŸå§‹äººã®å ´åˆã¯ã“ã‚Œã‚‚æ™®é€šã®æ”»æ’ƒ
 		}
 	}
 
@@ -43,7 +43,7 @@ public class PrimitiveMan implements Character
 	{
 		int damage = 0;
 
-		System.out.println("Œ´nl‚Ìƒu[ƒƒ‰ƒ“UŒ‚II");
+		System.out.println("åŸå§‹äººã®ãƒ–ãƒ¼ãƒ¡ãƒ©ãƒ³æ”»æ’ƒï¼ï¼");
 
 		int r = new java.util.Random().nextInt(5) + 1;
 		switch (r)
@@ -51,15 +51,15 @@ public class PrimitiveMan implements Character
 			case 1:
 			case 2:
 			case 3:
-				System.out.println("‚µ‚©‚µUŒ‚‚Í‚Í‚¸‚ê‚½BB");
+				System.out.println("ã—ã‹ã—æ”»æ’ƒã¯ã¯ãšã‚ŒãŸã€‚ã€‚");
 				break;
 			case 4:
-				System.out.println("ƒ}ƒŠƒI‚É100‚Ìƒ_ƒ[ƒWI");
+				System.out.println("ãƒãƒªã‚ªã«100ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼");
 				damage = 100;
 				break;
 			case 5:
-				System.out.println("UŒ‚‚Í“G‚ÌŠç–Ê‚É–½’†IIII");
-				System.out.println("ƒ}ƒŠƒI‚É350‚Ìƒ_ƒ[ƒWI");
+				System.out.println("æ”»æ’ƒã¯æ•µã®é¡”é¢ã«å‘½ä¸­ï¼ï¼ï¼ï¼");
+				System.out.println("ãƒãƒªã‚ªã«350ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼");
 				damage = 350;
 		}
 		mar.setHp(damage);
@@ -70,17 +70,17 @@ public class PrimitiveMan implements Character
 		int r = new java.util.Random().nextInt(5) + 1;
 		int damage = 50 * r;
 
-		System.out.println("Œ´nl‚ÍÎ‚ğ“Š‚°‚Â‚¯‚½I");
-		System.out.println("Î‚Í" + r + "‚Â–½’†‚µ‚½I");
-		System.out.println("ƒ}ƒŠƒI‚É" + damage + "‚Ìƒ_ƒ[ƒWII");
+		System.out.println("åŸå§‹äººã¯çŸ³ã‚’æŠ•ã’ã¤ã‘ãŸï¼");
+		System.out.println("çŸ³ã¯" + r + "ã¤å‘½ä¸­ã—ãŸï¼");
+		System.out.println("ãƒãƒªã‚ªã«" + damage + "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼ï¼");
 
 		mar.setHp(damage);
 	}
 
 	public void specialAttack(Mario mar)
 	{
-		System.out.println("Œ´nl‚Í‚±‚ñ–_‚ÅUŒ‚I");
-		System.out.println("ƒ}ƒŠƒI‚É100‚Ìƒ_ƒ[ƒWI");
+		System.out.println("åŸå§‹äººã¯ã“ã‚“æ£’ã§æ”»æ’ƒï¼");
+		System.out.println("ãƒãƒªã‚ªã«100ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼");
 
 		mar.setHp(100);
 	}
