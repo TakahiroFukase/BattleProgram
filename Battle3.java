@@ -94,8 +94,6 @@ public class Battle3 extends Thread
 			if (mario.getHp() == 0)
 				break;
 
-			int r = 0;
-
 			if (character1.getHp() > 0 && character2.getHp() > 0)
 			{
 				int oneOrTwo = new java.util.Random().nextInt(2) + 1;
