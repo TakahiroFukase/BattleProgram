@@ -104,12 +104,12 @@ public class Battle3 extends Thread
 			if (character1.getHp() > 0)
 			{
 				x = character1.selectAttack();//xには1~3(Ebiwaraは４も)のいずれかが入る
-				println(" ");
+				breakLine();
 			}
 			if (character2.getHp() > 0)
 			{
 				y = character2.selectAttack();
-				println(" ");
+				breakLine();
 			}
 
 			sleep(800);
@@ -117,7 +117,7 @@ public class Battle3 extends Thread
 			if (character1.getHp() > 0)
 			{
 				character1.callAttack(x, mario, character1, character2);
-				println(" ");
+				breakLine();
 
 				sleep(1400);
 			}
@@ -125,7 +125,7 @@ public class Battle3 extends Thread
 			if (character2.getHp() > 0)
 			{
 				character2.callAttack(y, mario, character1, character2);
-				println(" ");
+				breakLine();
 
 
 				sleep(1400);
@@ -154,7 +154,8 @@ public class Battle3 extends Thread
 				mario.fireBall(character2);
 			if (r == 4)
 				mario.throwShell(character2);
-			println(" ");
+			
+			breakLine();
 
 
 			sleep(2000);
@@ -178,6 +179,10 @@ public class Battle3 extends Thread
 
 	private static void println(String text) {
 		System.out.println(text);
+	}
+
+	private static void breakLine() {
+		println(" ");
 	}
 
 	public static void sleep(long millis) {
