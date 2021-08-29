@@ -12,8 +12,8 @@ public class Battle3 extends Thread
 		int chooseCharacter1 = 0;
 		int chooseCharacter2 = 0;
 
-		Character c1;
-		Character c2;
+		Character character1;
+		Character character2;
 
 		boolean correct = true;
 
@@ -54,61 +54,61 @@ public class Battle3 extends Thread
 		switch (chooseCharacter1)
 		{
 			case 1:
-				c1 = new Ebiwara();
+				character1 = new Ebiwara();
 				break;
 			case 2:
-				c1 = new Wizard();
+				character1 = new Wizard();
 				break;
 			case 3:
-				c1 = new PrimitiveMan();
+				character1 = new PrimitiveMan();
 				break;
 			case 4:
-				c1 = new Owl();
+				character1 = new Owl();
 				break;
 			default:
-				c1 = new Ebiwara();
+				character1 = new Ebiwara();
 		}
 
 		switch (chooseCharacter2)
 		{
 			case 1:
-				c2 = new Ebiwara();
+				character2 = new Ebiwara();
 				break;
 			case 2:
-				c2 = new Wizard();
+				character2 = new Wizard();
 				break;
 			case 3:
-				c2 = new PrimitiveMan();
+				character2 = new PrimitiveMan();
 				break;
 			case 4:
-				c2 = new Owl();
+				character2 = new Owl();
 				break;
 			default:
-				c2 = new Ebiwara();
+				character2 = new Ebiwara();
 		}
 
 
-		Mario m = new Mario();
+		Mario mario = new Mario();
 
 		System.out.println("\n敵のマリオが現れた！！！");
 
 
-		while (!(c1.getHp() <= 0 && c2.getHp() <= 0) || (m.getHp() <= 0))//勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
+		while (!(character1.getHp() <= 0 && character2.getHp() <= 0) || (mario.getHp() <= 0))//勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
 		{
 
-			showStatus(m, c1, c2);
+			showStatus(mario, character1, character2);
 			
-			int x = 0;//c1の選択された攻撃の番号を入れる変数
-			int y = 0;//c2の選択された攻撃の番号を入れる変数
+			int x = 0;//character1の選択された攻撃の番号を入れる変数
+			int y = 0;//character2の選択された攻撃の番号を入れる変数
 
-			if (c1.getHp() > 0)
+			if (character1.getHp() > 0)
 			{
-				x = c1.selectAttack();//xには1~3(Ebiwaraは４も)のいずれかが入る
+				x = character1.selectAttack();//xには1~3(Ebiwaraは４も)のいずれかが入る
 				System.out.println(" ");
 			}
-			if (c2.getHp() > 0)
+			if (character2.getHp() > 0)
 			{
-				y = c2.selectAttack();
+				y = character2.selectAttack();
 				System.out.println(" ");
 			}
 
@@ -119,9 +119,9 @@ public class Battle3 extends Thread
 			catch (InterruptedException g)
 			{}
 
-			if (c1.getHp() > 0)
+			if (character1.getHp() > 0)
 			{
-				c1.callAttack(x, m, c1, c2);
+				character1.callAttack(x, mario, character1, character2);
 				System.out.println(" ");
 
 				try
@@ -132,9 +132,9 @@ public class Battle3 extends Thread
 				{}
 			}
 
-			if (c2.getHp() > 0)
+			if (character2.getHp() > 0)
 			{
-				c2.callAttack(y, m, c1, c2);
+				character2.callAttack(y, mario, character1, character2);
 				System.out.println(" ");
 
 
@@ -146,29 +146,29 @@ public class Battle3 extends Thread
 				{}
 			}
 
-			if (m.getHp() == 0)
+			if (mario.getHp() == 0)
 				break;
 
 			int r = 0;
 
-			if (c1.getHp() > 0 && c2.getHp() > 0)
+			if (character1.getHp() > 0 && character2.getHp() > 0)
 				r = new java.util.Random().nextInt(4) + 1;
 
-			if (c1.getHp() == 0)
+			if (character1.getHp() == 0)
 				r = new java.util.Random().nextInt(2) + 3;
 
-			if (c2.getHp() == 0)
+			if (character2.getHp() == 0)
 				r = new java.util.Random().nextInt(2) + 1;
 				
 
 			if (r == 1)
-				m.fireBall(c1);//m（マリオ）の攻撃を引き出し、e（エビワラー）にダメージを与えるという一文
+				mario.fireBall(character1);//m（マリオ）の攻撃を引き出し、e（エビワラー）にダメージを与えるという一文
 			if (r == 2)
-				m.throwShell(c1);
+				mario.throwShell(character1);
 			if (r == 3)
-				m.fireBall(c2);
+				mario.fireBall(character2);
 			if (r == 4)
-				m.throwShell(c2);
+				mario.throwShell(character2);
 			System.out.println(" ");
 
 
@@ -181,13 +181,13 @@ public class Battle3 extends Thread
 
 		}
 
-		showStatus(m, c1, c2);
+		showStatus(mario, character1, character2);
 
 		//上のループの仕組みにより、以下２つのif構文のうち、必ず１つだけが実行される。
 
-		if (m.getHp() == 0)
-			System.out.println(c1.getNamae() + "&" + c2.getNamae() + "のチームの勝ち！");
-		if (c1.getHp() == 0 && c2.getHp() == 0)
+		if (mario.getHp() == 0)
+			System.out.println(character1.getNamae() + "&" + character2.getNamae() + "のチームの勝ち！");
+		if (character1.getHp() == 0 && character2.getHp() == 0)
 			System.out.println("マリオの勝ち！");
 		
 	}
