@@ -12,9 +12,6 @@ public class Battle3 extends Thread
 		int chooseCharacter1 = 0;
 		int chooseCharacter2 = 0;
 
-		Character character1;
-		Character character2;
-
 		boolean correct = true;
 
 		println("\n使用キャラクターを2体選択");
@@ -48,50 +45,13 @@ public class Battle3 extends Thread
 				correct = true;
 		}while (!(correct));
 
-
-//選択したキャラクターのインスタンスを作成
-
-		switch (chooseCharacter1)
-		{
-			case 1:
-				character1 = new Ebiwara();
-				break;
-			case 2:
-				character1 = new Wizard();
-				break;
-			case 3:
-				character1 = new PrimitiveMan();
-				break;
-			case 4:
-				character1 = new Owl();
-				break;
-			default:
-				character1 = new Ebiwara();
-		}
-
-		switch (chooseCharacter2)
-		{
-			case 1:
-				character2 = new Ebiwara();
-				break;
-			case 2:
-				character2 = new Wizard();
-				break;
-			case 3:
-				character2 = new PrimitiveMan();
-				break;
-			case 4:
-				character2 = new Owl();
-				break;
-			default:
-				character2 = new Ebiwara();
-		}
-
+		// ユーザーが選択したキャラクターのインスタンスを生成
+		Character character1 = getCharacter(chooseCharacter1);
+		Character character2 = getCharacter(chooseCharacter2);
 
 		Mario mario = new Mario();
 
 		println("\n敵のマリオが現れた！！！");
-
 
 		while (!(character1.getHp() <= 0 && character2.getHp() <= 0) || (mario.getHp() <= 0))//勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
 		{
@@ -207,4 +167,20 @@ public class Battle3 extends Thread
 		println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");	
 	}
 
+	private static Character getCharacter(int number) {
+
+		switch (number)
+		{
+			case 1:
+				return new Ebiwara();
+			case 2:
+				return new Wizard();
+			case 3:
+				return new PrimitiveMan();
+			case 4:
+				return new Owl();
+			default:
+				return new Ebiwara();
+		}
+	}
 }
