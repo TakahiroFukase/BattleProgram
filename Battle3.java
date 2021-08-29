@@ -96,10 +96,7 @@ public class Battle3 extends Thread
 		while (!(c1.getHp() <= 0 && c2.getHp() <= 0) || (m.getHp() <= 0))//勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
 		{
 
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			System.out.println("マリオHP：" + m.getHp() + "\n");
-			System.out.println(c1.getNamae() + "HP：" + c1.getHp() + "  " + c2.getNamae() + "HP：" + c2.getHp());
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
+			showStatus(m, c1, c2);
 			
 			int x = 0;//c1の選択された攻撃の番号を入れる変数
 			int y = 0;//c2の選択された攻撃の番号を入れる変数
@@ -184,13 +181,7 @@ public class Battle3 extends Thread
 
 		}
 
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
-			System.out.println("マリオHP：" + m.getHp() + "\n");
-			System.out.println(c1.getNamae() + "HP：" + c1.getHp() + "  " + c2.getNamae() + "HP：" + c2.getHp());
-			System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
-
-
-
+		showStatus(m, c1, c2);
 
 		//上のループの仕組みにより、以下２つのif構文のうち、必ず１つだけが実行される。
 
@@ -199,6 +190,15 @@ public class Battle3 extends Thread
 		if (c1.getHp() == 0 && c2.getHp() == 0)
 			System.out.println("マリオの勝ち！");
 		
+	}
+
+	private static void showStatus(Mario mario, Character character1, Character character2) {
+
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println("マリオHP：" + mario.getHp() + "\n");
+		System.out.print(character1.getNamae() + "HP：" + character1.getHp() + "  ");
+		System.out.println(character2.getNamae() + "HP：" + character2.getHp());
+		System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");	
 	}
 
 }
