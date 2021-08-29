@@ -19,15 +19,15 @@ public class Mario
 		}
 	}
 
-	private void fireBall(Character car)
+	private void fireBall(Character character)
 	{
 
 		System.out.println("マリオはファイヤ・ボールを繰り出した！！");
-		System.out.println(car.getNamae() + "に150のダメージ");
+		System.out.println(character.getNamae() + "に150のダメージ");
 
-		car.setHp(150);
+		character.setHp(150);
 
-		if (car.getHp() == 0)
+		if (character.getHp() == 0)
 		{
 			try
 			{
@@ -35,21 +35,21 @@ public class Mario
 			}
 			catch (InterruptedException g)
 			{}
-			System.out.println(car.getNamae() + "は息絶えた。。。");
+			System.out.println(character.getNamae() + "は息絶えた。。。");
 			
 		}
 
 
 	}
 
-	private void throwShell(Character car)
+	private void throwShell(Character character)
 	{
 		System.out.println("マリオは甲羅を投げつけた！！！");
-		System.out.println(car.getNamae() + "に200のダメージ");
+		System.out.println(character.getNamae() + "に200のダメージ");
 
-		car.setHp(200);
+		character.setHp(200);
 
-		if (car.getHp() == 0)
+		if (character.getHp() == 0)
 		{
 			try
 			{
@@ -57,7 +57,7 @@ public class Mario
 			}
 			catch (InterruptedException g)
 			{}
-			System.out.println(car.getNamae() + "は息絶えた。。。");
+			System.out.println(character.getNamae() + "は息絶えた。。。");
 			
 		}
 
