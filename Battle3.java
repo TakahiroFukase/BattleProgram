@@ -112,24 +112,14 @@ public class Battle3 extends Thread
 				println(" ");
 			}
 
-			try
-			{
-				Thread.sleep(800);
-			}
-			catch (InterruptedException g)
-			{}
+			sleep(800);
 
 			if (character1.getHp() > 0)
 			{
 				character1.callAttack(x, mario, character1, character2);
 				println(" ");
 
-				try
-				{
-					Thread.sleep(1400);
-				}
-				catch (InterruptedException g)
-				{}
+				sleep(1400);
 			}
 
 			if (character2.getHp() > 0)
@@ -138,12 +128,7 @@ public class Battle3 extends Thread
 				println(" ");
 
 
-				try
-				{
-					Thread.sleep(1400);
-				}
-				catch (InterruptedException g)
-				{}
+				sleep(1400);
 			}
 
 			if (mario.getHp() == 0)
@@ -172,12 +157,7 @@ public class Battle3 extends Thread
 			println(" ");
 
 
-			try
-			{
-				Thread.sleep(2000);
-			}
-			catch (InterruptedException g)
-			{}
+			sleep(2000);
 
 		}
 
@@ -198,6 +178,15 @@ public class Battle3 extends Thread
 
 	private static void println(String text) {
 		System.out.println(text);
+	}
+
+	public static void sleep(long millis) {
+		try
+		{
+			Thread.sleep(millis);
+		}
+		catch (InterruptedException g)
+		{}
 	}
 
 	private static void showStatus(Mario mario, Character character1, Character character2) {
