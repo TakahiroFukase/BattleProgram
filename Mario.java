@@ -4,7 +4,22 @@ public class Mario
 
 	private int hp = 3000;//他のクラスからこの値を変えられないようになっている
 
-	public void fireBall(Character car)
+	public void callAttack(Character character) {
+
+		int oneOrTwo = new java.util.Random().nextInt(2) + 1;
+
+		switch (oneOrTwo)
+		{
+			case 1:
+				fireBall(character);
+				break;
+			case 2:
+				throwShell(character);
+				break;
+		}
+	}
+
+	private void fireBall(Character car)
 	{
 
 		System.out.println("マリオはファイヤ・ボールを繰り出した！！");
@@ -27,7 +42,7 @@ public class Mario
 
 	}
 
-	public void throwShell(Character car)
+	private void throwShell(Character car)
 	{
 		System.out.println("マリオは甲羅を投げつけた！！！");
 		System.out.println(car.getNamae() + "に200のダメージ");

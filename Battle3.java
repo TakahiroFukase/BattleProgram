@@ -137,23 +137,27 @@ public class Battle3 extends Thread
 			int r = 0;
 
 			if (character1.getHp() > 0 && character2.getHp() > 0)
-				r = new java.util.Random().nextInt(4) + 1;
+			{
+				int oneOrTwo = new java.util.Random().nextInt(2) + 1;
 
-			if (character1.getHp() == 0)
-				r = new java.util.Random().nextInt(2) + 3;
-
-			if (character2.getHp() == 0)
-				r = new java.util.Random().nextInt(2) + 1;
-				
-
-			if (r == 1)
-				mario.fireBall(character1);//m（マリオ）の攻撃を引き出し、e（エビワラー）にダメージを与えるという一文
-			if (r == 2)
-				mario.throwShell(character1);
-			if (r == 3)
-				mario.fireBall(character2);
-			if (r == 4)
-				mario.throwShell(character2);
+				switch (oneOrTwo)
+				{
+					case 1:
+						mario.callAttack(character1);
+						break;
+					case 2:
+						mario.callAttack(character2);
+						break;
+				}
+			}
+			else if (character1.getHp() == 0)
+			{
+				mario.callAttack(character2);
+			}
+			else if (character2.getHp() == 0) 
+			{
+				mario.callAttack(character1);
+			}
 			
 			breakLine();
 
