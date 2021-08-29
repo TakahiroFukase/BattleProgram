@@ -98,17 +98,17 @@ public class Battle3 extends Thread
 
 			showStatus(mario, character1, character2);
 			
-			int x = 0;//character1の選択された攻撃の番号を入れる変数
-			int y = 0;//character2の選択された攻撃の番号を入れる変数
+			int attackNoForCharacter1 = 0;
+			int attackNoForCharacter2 = 0;
 
 			if (character1.getHp() > 0)
 			{
-				x = character1.selectAttack();//xには1~3(Ebiwaraは４も)のいずれかが入る
+				attackNoForCharacter1 = character1.selectAttack();
 				breakLine();
 			}
 			if (character2.getHp() > 0)
 			{
-				y = character2.selectAttack();
+				attackNoForCharacter2 = character2.selectAttack();
 				breakLine();
 			}
 
@@ -116,7 +116,7 @@ public class Battle3 extends Thread
 
 			if (character1.getHp() > 0)
 			{
-				character1.callAttack(x, mario, character1, character2);
+				character1.callAttack(attackNoForCharacter1, mario, character1, character2);
 				breakLine();
 
 				sleep(1400);
@@ -124,7 +124,7 @@ public class Battle3 extends Thread
 
 			if (character2.getHp() > 0)
 			{
-				character2.callAttack(y, mario, character1, character2);
+				character2.callAttack(attackNoForCharacter2, mario, character1, character2);
 				breakLine();
 
 
