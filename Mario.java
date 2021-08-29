@@ -78,4 +78,9 @@ public class Mario
 			this.hp = 0;//hpはゼロ以下にはならない
 
 	}
+
+	public boolean isDead()
+	{
+		return this.hp == 0;
+	}
 }

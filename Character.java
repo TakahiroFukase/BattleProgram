@@ -21,6 +21,8 @@ public interface Character
 	public abstract void setHp(int h);
 
 	public abstract String getNamae();
+
+	public abstract boolean isDead();
 }
 
 //以上のようにこのインターフェースを継承した

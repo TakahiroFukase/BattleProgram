@@ -53,7 +53,7 @@ public class Battle3 extends Thread
 
 		println("\n敵のマリオが現れた！！！");
 
-		while (!(character1.getHp() <= 0 && character2.getHp() <= 0) || (mario.getHp() <= 0))//勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
+		while (!(character1.isDead() && character2.isDead()) || (mario.isDead()))//勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
 		{
 
 			showStatus(mario, character1, character2);
@@ -61,12 +61,12 @@ public class Battle3 extends Thread
 			int attackNoForCharacter1 = 0;
 			int attackNoForCharacter2 = 0;
 
-			if (character1.getHp() > 0)
+			if (!character1.isDead())
 			{
 				attackNoForCharacter1 = character1.selectAttack();
 				breakLine();
 			}
-			if (character2.getHp() > 0)
+			if (!character2.isDead())
 			{
 				attackNoForCharacter2 = character2.selectAttack();
 				breakLine();
@@ -74,7 +74,7 @@ public class Battle3 extends Thread
 
 			sleep(800);
 
-			if (character1.getHp() > 0)
+			if (!character1.isDead())
 			{
 				character1.callAttack(attackNoForCharacter1, mario, character1, character2);
 				breakLine();
@@ -82,7 +82,7 @@ public class Battle3 extends Thread
 				sleep(1400);
 			}
 
-			if (character2.getHp() > 0)
+			if (!character2.isDead())
 			{
 				character2.callAttack(attackNoForCharacter2, mario, character1, character2);
 				breakLine();
@@ -91,10 +91,10 @@ public class Battle3 extends Thread
 				sleep(1400);
 			}
 
-			if (mario.getHp() == 0)
+			if (mario.isDead())
 				break;
 
-			if (character1.getHp() > 0 && character2.getHp() > 0)
+			if (!character1.isDead() && !character2.isDead())
 			{
 				int oneOrTwo = new java.util.Random().nextInt(2) + 1;
 
@@ -108,11 +108,11 @@ public class Battle3 extends Thread
 						break;
 				}
 			}
-			else if (character1.getHp() == 0)
+			else if (character1.isDead())
 			{
 				mario.callAttack(character2);
 			}
-			else if (character2.getHp() == 0) 
+			else if (character2.isDead()) 
 			{
 				mario.callAttack(character1);
 			}
@@ -128,9 +128,9 @@ public class Battle3 extends Thread
 
 		//上のループの仕組みにより、以下２つのif構文のうち、必ず１つだけが実行される。
 
-		if (mario.getHp() == 0)
+		if (mario.isDead())
 			println(character1.getNamae() + "&" + character2.getNamae() + "のチームの勝ち！");
-		if (character1.getHp() == 0 && character2.getHp() == 0)
+		if (character1.isDead() && character2.isDead())
 			println("マリオの勝ち！");
 		
 	}
