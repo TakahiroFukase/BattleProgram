@@ -6,11 +6,10 @@
 
 import java.util.*;
 
-public class Battle3 extends Thread
-{
+public class Battle3 extends Thread {
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
+
 		int chooseCharacter1 = 0;
 		int chooseCharacter2 = 0;
 
@@ -18,34 +17,32 @@ public class Battle3 extends Thread
 
 		println("\n使用キャラクターを2体選択");
 		
-		do
-		{
+		do {
 			println("【キャラクターNo.1】");
 			print("エビワラー→１　魔法使い→２　原始人→３ フクロウ→４: ");
 			chooseCharacter1 = new Scanner(System.in).nextInt();
 
-			if (chooseCharacter1 < 1 || chooseCharacter1 > 4)
+			if (chooseCharacter1 < 1 || chooseCharacter1 > 4) {
 				correct = false;
-			else
+			} else {
 				correct = true;
-		}while (!(correct));
+			}
+		} while (!(correct));
 
-		do
-		{
+		do {
 			println("【キャラクターNo.2】");
 			print("エビワラー→１　魔法使い→２　原始人→３ フクロウ→４: ");
 			chooseCharacter2 = new Scanner(System.in).nextInt();
 
-			if (chooseCharacter2 < 1 || chooseCharacter2 > 4)
+			if (chooseCharacter2 < 1 || chooseCharacter2 > 4) {
 				correct = false;
-			else if (chooseCharacter1 == chooseCharacter2)
-			{	
+			} else if (chooseCharacter1 == chooseCharacter2) {	
 				correct = false;
 				println("\n同じキャラクターは使用できません。。\n");
-			}
-			else
+			} else {
 				correct = true;
-		}while (!(correct));
+			}
+		} while (!(correct));
 
 		// ユーザーが選択したキャラクターのインスタンスを生成
 		Character character1 = getCharacter(chooseCharacter1);
@@ -55,53 +52,46 @@ public class Battle3 extends Thread
 
 		println("\n敵のマリオが現れた！！！");
 
-		while (!(character1.isDead() && character2.isDead()) || (mario.isDead()))//勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
-		{
+		while (!(character1.isDead() && character2.isDead()) || (mario.isDead())) { //勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
 
 			showStatus(mario, character1, character2);
 			
 			int attackNoForCharacter1 = 0;
 			int attackNoForCharacter2 = 0;
 
-			if (!character1.isDead())
-			{
+			if (!character1.isDead()) {
 				attackNoForCharacter1 = character1.selectAttack();
 				breakLine();
 			}
-			if (!character2.isDead())
-			{
+			if (!character2.isDead()) {
 				attackNoForCharacter2 = character2.selectAttack();
 				breakLine();
 			}
 
 			sleep(800);
 
-			if (!character1.isDead())
-			{
+			if (!character1.isDead()) {
 				character1.callAttack(attackNoForCharacter1, mario, character1, character2);
 				breakLine();
 
 				sleep(1400);
 			}
 
-			if (!character2.isDead())
-			{
+			if (!character2.isDead()) {
 				character2.callAttack(attackNoForCharacter2, mario, character1, character2);
 				breakLine();
-
 
 				sleep(1400);
 			}
 
-			if (mario.isDead())
+			if (mario.isDead()) {
 				break;
+			}
 
-			if (!character1.isDead() && !character2.isDead())
-			{
+			if (!character1.isDead() && !character2.isDead()) {
 				int oneOrTwo = new Random().nextInt(2) + 1;
 
-				switch (oneOrTwo)
-				{
+				switch (oneOrTwo) {
 					case 1:
 						mario.callAttack(character1);
 						break;
@@ -109,32 +99,28 @@ public class Battle3 extends Thread
 						mario.callAttack(character2);
 						break;
 				}
-			}
-			else if (character1.isDead())
-			{
+			} else if (character1.isDead()) {
 				mario.callAttack(character2);
-			}
-			else if (character2.isDead()) 
-			{
+			} else if (character2.isDead()) {
 				mario.callAttack(character1);
 			}
 			
 			breakLine();
 
-
 			sleep(2000);
-
 		}
 
 		showStatus(mario, character1, character2);
 
 		//上のループの仕組みにより、以下２つのif構文のうち、必ず１つだけが実行される。
 
-		if (mario.isDead())
+		if (mario.isDead()) {
 			println(character1.getNamae() + "&" + character2.getNamae() + "のチームの勝ち！");
-		if (character1.isDead() && character2.isDead())
-			println("マリオの勝ち！");
+		}
 		
+		if (character1.isDead() && character2.isDead()) {
+			println("マリオの勝ち！");
+		}
 	}
 
 	private static void print(String text) {
@@ -150,12 +136,11 @@ public class Battle3 extends Thread
 	}
 
 	public static void sleep(long millis) {
-		try
-		{
+		try {
 			Thread.sleep(millis);
+		} catch (InterruptedException g) {
+			// NOP
 		}
-		catch (InterruptedException g)
-		{}
 	}
 
 	private static void showStatus(Mario mario, Character character1, Character character2) {
@@ -169,8 +154,7 @@ public class Battle3 extends Thread
 
 	private static Character getCharacter(int number) {
 
-		switch (number)
-		{
+		switch (number) {
 			case 1:
 				return new Ebiwara();
 			case 2:

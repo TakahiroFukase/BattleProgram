@@ -1,32 +1,26 @@
 import java.util.*;
 import javax.swing.JOptionPane;
 	
+public class Owl extends Thread implements Character {
 
-
-public class Owl extends Thread implements Character
-{
-	private int hp = 800;//他のクラスからこの値を変えられないようになっている
+	private int hp = 800; //他のクラスからこの値を変えられないようになっている
 
 	private String namae = "フクロウ";
 
-
-	public int selectAttack()
-	{
+	public int selectAttack() {
 		System.out.println("フクロウの攻撃を選択");
 		int input = 0;
 
-		do
-		{
+		do {
 			System.out.print("冷たい風→１　仲間を呼ぶ→２ 癒しの風→３: ");
 			input = new Scanner(System.in).nextInt();
-		}while (input < 1 || input > 3);
+		} while (input < 1 || input > 3);
+		
 		return input;
 	}
 
-	public void callAttack(int i, Mario mar, Character c1, Character c2)
-	{
-		switch (i)
-		{
+	public void callAttack(int i, Mario mar, Character c1, Character c2) {
+		switch (i) {
 			case 1:
 				attack1(mar);
 				break;
@@ -39,32 +33,28 @@ public class Owl extends Thread implements Character
 	}
 
 
-	public void attack1(Mario mar)
-	{
+	public void attack1(Mario mar) {
 		System.out.println("フクロウは冷たい風を巻き起こした！");
 		int r = new Random().nextInt(20) + 1;
 		int damage = 100 + r;
 		System.out.println("マリオに" + damage + "のダメージ");
 
-		mar.setHp(damage);//ここでMarioのsetterから、Marioのhpにアクセスする
+		mar.setHp(damage); //ここでMarioのsetterから、Marioのhpにアクセスする
 	}
 
-
-	public void attack2(Mario mar)
-	{
+	public void attack2(Mario mar) {
 
 		int damage = 0;
 		System.out.println("フクロウは仲間を呼んだ！！！");
 		int r = new Random().nextInt(5) + 1;
-		try
-		{
+		
+		try {
 			Thread.sleep(1900);
-		}
-		catch (InterruptedException g)
-		{}			
+		} catch (InterruptedException g) {
+			// NOP
+		}			
 
-		switch (r)
-		{
+		switch (r) {
 			case 1:
 			case 2:
 				System.out.println("しかし呼び声はとどかなかった。。");
@@ -83,11 +73,9 @@ public class Owl extends Thread implements Character
 		mar.setHp(damage);
 	}
 
-	public void specialAttack(Mario Mar)
-	{}
+	public void specialAttack(Mario Mar) {}
 
-	public void specialAttack(Character c1, Character c2)
-	{
+	public void specialAttack(Character c1, Character c2) {
 
 		int r = new Random().nextInt(50) + 1;
 
@@ -98,48 +86,48 @@ public class Owl extends Thread implements Character
 		int recover2 = (30 + r2);
 
 		System.out.println("フクロウは癒しの風を巻き起こした！！");
-		try
-		{
+		
+		try {
 			Thread.sleep(1900);
-		}
-		catch (InterruptedException g)
-		{}			
+		} catch (InterruptedException g) {
+			// NOP
+		}			
 
 		System.out.println(c1.getNamae() + "のHPが" + recover1 + "回復した！！");
-		try
-		{
+		
+		try {
 			Thread.sleep(1000);
-		}
-		catch (InterruptedException g)
-		{}	
+		} catch (InterruptedException g) {
+			// NOP
+		}	
+
 		System.out.println(c2.getNamae() + "のHPが" + recover2 + "回復した！！");
 
 		c1.setHp((-1) * recover1);
 		c2.setHp((-1) * recover2);
 	}
 
-	public int getHp()
-	{
+	public int getHp() {
 		return this.hp;
 	}
 
-	public void setHp(int h)//これがEbiwaraのhpを操るためのsetterである
-	{
+	public void setHp(int h) { //これがEbiwaraのhpを操るためのsetterである
 		this.hp -= h;
 
-		if (this.hp < 0)//hpはゼロ以下にはならない
+		if (this.hp < 0) {//hpはゼロ以下にはならない
 			this.hp = 0;
-		if (this.hp > 800)
+		}
+		
+		if (this.hp > 800) {
 			this.hp = 800;
+		}
 	}
 
-	public String getNamae()
-	{
+	public String getNamae() {
 		return this.namae;
 	}
 
-	public boolean isDead()
-	{
+	public boolean isDead() {
 		return this.hp == 0;
 	}
 }

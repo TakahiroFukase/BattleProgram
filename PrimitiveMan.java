@@ -1,35 +1,33 @@
 import java.util.*;
 
-public class PrimitiveMan implements Character
-{
+public class PrimitiveMan implements Character {
+	
 	private int hp = 1000;
 
 	private String namae = "原始人";
 
+	public int selectAttack() {
 
-	public int selectAttack()
-	{
 		boolean correct = true;
 		int input = 0;
-		do
-		{
+		
+		do {
 			System.out.println("原始人の攻撃を選択");
 			System.out.println("ブーメラン攻撃→１　石を投げる→２　こん棒で叩く→３ : ");
 			input = new Scanner(System.in).nextInt();
 
-			if (input < 1 || input > 3)
+			if (input < 1 || input > 3) {
 				correct = false;
-			else
+			} else {
 				correct = true;
-		}while (!(correct));
+			}
+		} while (!(correct));
 
 		return input;
 	}
 
-	public void callAttack(int i, Mario mar, Character c1, Character c2)
-	{
-		switch (i)
-		{
+	public void callAttack(int i, Mario mar, Character c1, Character c2) {
+		switch (i) {
 			case 1 :
 				attack1(mar);
 				break;
@@ -41,15 +39,14 @@ public class PrimitiveMan implements Character
 		}
 	}
 
-	public void attack1(Mario mar)
-	{
+	public void attack1(Mario mar) {
 		int damage = 0;
 
 		System.out.println("原始人のブーメラン攻撃！！");
 
 		int r = new Random().nextInt(5) + 1;
-		switch (r)
-		{
+		
+		switch (r) {
 			case 1:
 			case 2:
 			case 3:
@@ -67,8 +64,7 @@ public class PrimitiveMan implements Character
 		mar.setHp(damage);
 	}
 
-	public void attack2(Mario mar)
-	{
+	public void attack2(Mario mar) {
 		int r = new Random().nextInt(5) + 1;
 		int damage = 50 * r;
 
@@ -79,36 +75,34 @@ public class PrimitiveMan implements Character
 		mar.setHp(damage);
 	}
 
-	public void specialAttack(Mario mar)
-	{
+	public void specialAttack(Mario mar) {
 		System.out.println("原始人はこん棒で攻撃！");
 		System.out.println("マリオに100のダメージ！");
 
 		mar.setHp(100);
 	}
 
-	public int getHp()
-	{
+	public int getHp() {
 		return this.hp;
 	}
 
-	public void setHp(int h)
-	{
+	public void setHp(int h) {
 		this.hp -= h;
 
-		if (this.hp < 0)
+		if (this.hp < 0) {
 			this.hp = 0;
-		if (this.hp > 1000)
+		}
+
+		if (this.hp > 1000) {
 			this.hp = 1000;
+		}
 	}
 
-	public String getNamae()
-	{
+	public String getNamae() {
 		return this.namae;
 	}
 
-	public boolean isDead()
-	{
+	public boolean isDead() {
 		return this.hp == 0;
 	}
 }
