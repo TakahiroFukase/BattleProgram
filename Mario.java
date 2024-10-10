@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Mario
 {
 	//まずは、インスタンスが保有するべき情報をフィールドで宣言
@@ -6,7 +8,7 @@ public class Mario
 
 	public void callAttack(Character character) {
 
-		int oneOrTwo = new java.util.Random().nextInt(2) + 1;
+		int oneOrTwo = new Random().nextInt(2) + 1;
 
 		switch (oneOrTwo)
 		{

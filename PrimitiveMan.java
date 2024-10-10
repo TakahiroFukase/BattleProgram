@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class PrimitiveMan implements Character
 {
 	private int hp = 1000;
@@ -13,7 +15,7 @@ public class PrimitiveMan implements Character
 		{
 			System.out.println("原始人の攻撃を選択");
 			System.out.println("ブーメラン攻撃→１　石を投げる→２　こん棒で叩く→３ : ");
-			input = new java.util.Scanner(System.in).nextInt();
+			input = new Scanner(System.in).nextInt();
 
 			if (input < 1 || input > 3)
 				correct = false;
@@ -45,7 +47,7 @@ public class PrimitiveMan implements Character
 
 		System.out.println("原始人のブーメラン攻撃！！");
 
-		int r = new java.util.Random().nextInt(5) + 1;
+		int r = new Random().nextInt(5) + 1;
 		switch (r)
 		{
 			case 1:
@@ -67,7 +69,7 @@ public class PrimitiveMan implements Character
 
 	public void attack2(Mario mar)
 	{
-		int r = new java.util.Random().nextInt(5) + 1;
+		int r = new Random().nextInt(5) + 1;
 		int damage = 50 * r;
 
 		System.out.println("原始人は石を投げつけた！");

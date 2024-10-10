@@ -1,3 +1,4 @@
+import java.util.*;
 import javax.swing.JOptionPane;
 	
 
@@ -20,7 +21,7 @@ public class Ebiwara extends Thread implements Character
 		{
 
 				System.out.print("ファイア・パンチ→１　かみなりパンチ→２ : ");
-				input = new java.util.Scanner(System.in).nextInt();
+				input = new Scanner(System.in).nextInt();
 				if (!(input == 1 || input == 2))
 				{
 					input = 4;
@@ -30,7 +31,7 @@ public class Ebiwara extends Thread implements Character
 		else
 		{
 			System.out.print("ファイア・パンチ→１　かみなりパンチ→２　連続パンチ→３ : ");
-			input = new java.util.Scanner(System.in).nextInt();
+			input = new Scanner(System.in).nextInt();
 			if (! (input == 1 || input == 2 || input == 3))
 			{
 				input = 4;
@@ -75,7 +76,7 @@ public class Ebiwara extends Thread implements Character
 
 		int damage = 0;
 		System.out.println("エビワラーのかみなりパンチ！！！");
-		int r = new java.util.Random().nextInt(2) + 1;
+		int r = new Random().nextInt(2) + 1;
 		switch (r)
 		{
 			case 1:
@@ -104,7 +105,7 @@ public class Ebiwara extends Thread implements Character
 			catch (InterruptedException g)
 			{}			
 		}
-		int r = new java.util.Random().nextInt(3) + 1;
+		int r = new Random().nextInt(3) + 1;
 		String input = "";
 		String word = "";
 

@@ -4,6 +4,8 @@
 //クラスは神様のクラス、マリオのクラス、エビワラーのクラスの３つで作ってみる
 //そして、マリオとエビワラーをインスタンス化し、神様のクラス上で操作する。
 
+import java.util.*;
+
 public class Battle3 extends Thread
 {
 
@@ -20,7 +22,7 @@ public class Battle3 extends Thread
 		{
 			println("【キャラクターNo.1】");
 			print("エビワラー→１　魔法使い→２　原始人→３ フクロウ→４: ");
-			chooseCharacter1 = new java.util.Scanner(System.in).nextInt();
+			chooseCharacter1 = new Scanner(System.in).nextInt();
 
 			if (chooseCharacter1 < 1 || chooseCharacter1 > 4)
 				correct = false;
@@ -32,7 +34,7 @@ public class Battle3 extends Thread
 		{
 			println("【キャラクターNo.2】");
 			print("エビワラー→１　魔法使い→２　原始人→３ フクロウ→４: ");
-			chooseCharacter2 = new java.util.Scanner(System.in).nextInt();
+			chooseCharacter2 = new Scanner(System.in).nextInt();
 
 			if (chooseCharacter2 < 1 || chooseCharacter2 > 4)
 				correct = false;
@@ -96,7 +98,7 @@ public class Battle3 extends Thread
 
 			if (!character1.isDead() && !character2.isDead())
 			{
-				int oneOrTwo = new java.util.Random().nextInt(2) + 1;
+				int oneOrTwo = new Random().nextInt(2) + 1;
 
 				switch (oneOrTwo)
 				{

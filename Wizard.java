@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Wizard implements Character
 {
 	private int hp = 800;
@@ -15,7 +17,7 @@ public class Wizard implements Character
 			{
 				System.out.println("魔法使いの攻撃を選択");
 				System.out.println("杖でたたく→１　集中する→２ : ");
-				input = new java.util.Scanner(System.in).nextInt();
+				input = new Scanner(System.in).nextInt();
 
 				if (input == 1 || input == 2)
 					correct = false;
@@ -25,7 +27,7 @@ public class Wizard implements Character
 		{
 			System.out.println("魔法使いの攻撃を選択");
 			System.out.println("杖でたたく→１　集中する→２ 光線を放つ→３ : ");
-			input = new java.util.Scanner(System.in).nextInt();
+			input = new Scanner(System.in).nextInt();
 			
 		}
 		return input;
@@ -77,7 +79,7 @@ public class Wizard implements Character
 		int damage = 0;
 		System.out.println("魔法使いは光線を放った！！");
 		System.out.println("光線は大爆発を起こした！！！");
-		int r = new java.util.Random().nextInt(3) + 1;
+		int r = new Random().nextInt(3) + 1;
 		switch (r)
 		{
 			case 1:

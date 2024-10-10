@@ -1,3 +1,4 @@
+import java.util.*;
 import javax.swing.JOptionPane;
 	
 
@@ -17,7 +18,7 @@ public class Owl extends Thread implements Character
 		do
 		{
 			System.out.print("冷たい風→１　仲間を呼ぶ→２ 癒しの風→３: ");
-			input = new java.util.Scanner(System.in).nextInt();
+			input = new Scanner(System.in).nextInt();
 		}while (input < 1 || input > 3);
 		return input;
 	}
@@ -41,7 +42,7 @@ public class Owl extends Thread implements Character
 	public void attack1(Mario mar)
 	{
 		System.out.println("フクロウは冷たい風を巻き起こした！");
-		int r = new java.util.Random().nextInt(20) + 1;
+		int r = new Random().nextInt(20) + 1;
 		int damage = 100 + r;
 		System.out.println("マリオに" + damage + "のダメージ");
 
@@ -54,7 +55,7 @@ public class Owl extends Thread implements Character
 
 		int damage = 0;
 		System.out.println("フクロウは仲間を呼んだ！！！");
-		int r = new java.util.Random().nextInt(5) + 1;
+		int r = new Random().nextInt(5) + 1;
 		try
 		{
 			Thread.sleep(1900);
@@ -88,11 +89,11 @@ public class Owl extends Thread implements Character
 	public void specialAttack(Character c1, Character c2)
 	{
 
-		int r = new java.util.Random().nextInt(50) + 1;
+		int r = new Random().nextInt(50) + 1;
 
 		int recover1 = (30 + r);
 
-		int r2 = new java.util.Random().nextInt(50) + 1;
+		int r2 = new Random().nextInt(50) + 1;
 
 		int recover2 = (30 + r2);
 
