@@ -21,6 +21,8 @@ public interface Character {
 
 	public abstract String getNamae();
 
+	public abstract boolean isSurviving();
+
 	public abstract boolean isDead();
 }
 

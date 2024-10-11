@@ -111,6 +111,10 @@ public class Wizard implements Character {
 		return this.namae;
 	}
 
+	public boolean isSurviving() {
+		return !isDead();
+	}
+
 	public boolean isDead() {
 		return this.hp == 0;
 	}
