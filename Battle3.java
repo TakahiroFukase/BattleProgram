@@ -10,43 +10,11 @@ public class Battle3 extends Thread {
 
 	public static void main(String[] args) {
 
-		int chooseCharacter1 = 0;
-		int chooseCharacter2 = 0;
-
-		boolean correct = true;
-
 		println("\n使用キャラクターを2体選択");
 		
-		do {
-			println("【キャラクターNo.1】");
-			print("エビワラー→１　魔法使い→２　原始人→３ フクロウ→４: ");
-			chooseCharacter1 = new Scanner(System.in).nextInt();
-
-			if (chooseCharacter1 < 1 || chooseCharacter1 > 4) {
-				correct = false;
-			} else {
-				correct = true;
-			}
-		} while (!(correct));
-
-		do {
-			println("【キャラクターNo.2】");
-			print("エビワラー→１　魔法使い→２　原始人→３ フクロウ→４: ");
-			chooseCharacter2 = new Scanner(System.in).nextInt();
-
-			if (chooseCharacter2 < 1 || chooseCharacter2 > 4) {
-				correct = false;
-			} else if (chooseCharacter1 == chooseCharacter2) {	
-				correct = false;
-				println("\n同じキャラクターは使用できません。。\n");
-			} else {
-				correct = true;
-			}
-		} while (!(correct));
-
-		// ユーザーが選択したキャラクターのインスタンスを生成
-		Character character1 = getCharacter(chooseCharacter1);
-		Character character2 = getCharacter(chooseCharacter2);
+		CharacterPicker characterPicker = new CharacterPicker();
+		Character character1 = characterPicker.chooseCharacter1();
+		Character character2 = characterPicker.chooseCharacter2();
 
 		Mario mario = new Mario();
 
@@ -150,21 +118,5 @@ public class Battle3 extends Thread {
 		print(character1.getNamae() + "HP：" + character1.getHp() + "  ");
 		println(character2.getNamae() + "HP：" + character2.getHp());
 		println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");	
-	}
-
-	private static Character getCharacter(int number) {
-
-		switch (number) {
-			case 1:
-				return new Ebiwara();
-			case 2:
-				return new Wizard();
-			case 3:
-				return new PrimitiveMan();
-			case 4:
-				return new Owl();
-			default:
-				return new Ebiwara();
-		}
 	}
 }
