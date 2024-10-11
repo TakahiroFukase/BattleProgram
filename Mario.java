@@ -28,7 +28,7 @@ public class Mario {
 
 	private Character chooseCharacterToAttack(Character character1, Character character2) {
 
-		if (!character1.isDead() && !character2.isDead()) {
+		if (character1.isSurviving() && character2.isSurviving()) {
 			int oneOrTwo = new Random().nextInt(2) + 1;
 
 			switch (oneOrTwo) {
@@ -37,10 +37,10 @@ public class Mario {
 				case 2:
 					return character2;
 			}
-		} else if (character1.isDead()) {
-			return character2;
-		} else if (character2.isDead()) {
+		} else if (character1.isSurviving()) {
 			return character1;
+		} else if (character2.isSurviving()) {
+			return character2;
 		}
 
 		// 基本的にどちらとも死んでいることはあり得ない想定
