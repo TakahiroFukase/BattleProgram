@@ -54,7 +54,7 @@ public class Mario {
 
 		character.setHp(150);
 
-		if (character.getHp() == 0) {
+		if (character.isDead()) {
 			try {
 				Thread.sleep(1400);
 			} catch (InterruptedException g) {
@@ -71,7 +71,7 @@ public class Mario {
 
 		character.setHp(200);
 
-		if (character.getHp() == 0) {
+		if (character.isDead()) {
 			try {
 				Thread.sleep(1400);
 			} catch (InterruptedException g) {
