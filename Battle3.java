@@ -18,11 +18,13 @@ public class Battle3 extends Thread {
 
 		Mario mario = new Mario();
 
+		Referee referee = new Referee(mario, character1, character2);
+
 		println("\n敵のマリオが現れた！！！");
 
-		while (!(character1.isDead() && character2.isDead()) || (mario.isDead())) { //勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
+		while (referee.isGameInProgress()) { //勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
 
-			showStatus(mario, character1, character2);
+			referee.announceStatus();
 
 			if (!character1.isDead()) {
 				character1.selectAttack();
@@ -61,17 +63,8 @@ public class Battle3 extends Thread {
 			sleep(2000);
 		}
 
-		showStatus(mario, character1, character2);
-
-		//上のループの仕組みにより、以下２つのif構文のうち、必ず１つだけが実行される。
-
-		if (mario.isDead()) {
-			println(character1.getNamae() + "&" + character2.getNamae() + "のチームの勝ち！");
-		}
-		
-		if (character1.isDead() && character2.isDead()) {
-			println("マリオの勝ち！");
-		}
+		referee.announceStatus();
+		referee.announceVictory();
 	}
 
 	private static void print(String text) {
@@ -92,14 +85,5 @@ public class Battle3 extends Thread {
 		} catch (InterruptedException g) {
 			// NOP
 		}
-	}
-
-	private static void showStatus(Mario mario, Character character1, Character character2) {
-
-		println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
-		println("マリオHP：" + mario.getHp() + "\n");
-		print(character1.getNamae() + "HP：" + character1.getHp() + "  ");
-		println(character2.getNamae() + "HP：" + character2.getHp());
-		println("+++++++++++++++++++++++++++++++++++++++++++++++++++++");	
 	}
 }
