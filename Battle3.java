@@ -26,26 +26,26 @@ public class Battle3 extends Thread {
 
 			referee.announceStatus();
 
-			if (!character1.isDead()) {
+			if (character1.isSurviving()) {
 				character1.selectAttack();
 				breakLine();
 			}
 
-			if (!character2.isDead()) {
+			if (character2.isSurviving()) {
 				character2.selectAttack();
 				breakLine();
 			}
 
 			sleep(800);
 
-			if (!character1.isDead()) {
+			if (character1.isSurviving()) {
 				character1.callAttack(mario, character1, character2);
 				breakLine();
 
 				sleep(1400);
 			}
 
-			if (!character2.isDead()) {
+			if (character2.isSurviving()) {
 				character2.callAttack(mario, character1, character2);
 				breakLine();
 
