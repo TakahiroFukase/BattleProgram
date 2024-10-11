@@ -5,18 +5,46 @@ public class Mario {
 
 	private int hp = 3000; //他のクラスからこの値を変えられないようになっている
 
-	public void callAttack(Character character) {
+	public void callAttack(Character character1, Character character2) {
+
+		Character characterToAttack = chooseCharacterToAttack(character1, character2);
+
+		if (characterToAttack == null) {
+			// ここに入ることは基本あり得ないが、一応ケアしておく
+			return；
+		}
 
 		int oneOrTwo = new Random().nextInt(2) + 1;
 
 		switch (oneOrTwo) {
 			case 1:
-				fireBall(character);
+				fireBall(characterToAttack);
 				break;
 			case 2:
-				throwShell(character);
+				throwShell(characterToAttack);
 				break;
 		}
+	}
+
+	private Character chooseCharacterToAttack(Character character1, Character character2) {
+
+		if (!character1.isDead() && !character2.isDead()) {
+			int oneOrTwo = new Random().nextInt(2) + 1;
+
+			switch (oneOrTwo) {
+				case 1:
+					return character1;
+				case 2:
+					return character2;
+			}
+		} else if (character1.isDead()) {
+			return character2;
+		} else if (character2.isDead()) {
+			return character1;
+		}
+
+		// 基本的にどちらとも死んでいることはあり得ない想定
+		return null;
 	}
 
 	private void fireBall(Character character) {
@@ -34,7 +62,6 @@ public class Mario {
 			}
 
 			System.out.println(character.getNamae() + "は息絶えた。。。");
-			
 		}
 	}
 

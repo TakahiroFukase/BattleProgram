@@ -11,7 +11,7 @@ public class Battle3 extends Thread {
 	public static void main(String[] args) {
 
 		println("\n使用キャラクターを2体選択");
-		
+
 		CharacterPicker characterPicker = new CharacterPicker();
 		Character character1 = characterPicker.chooseCharacter1();
 		Character character2 = characterPicker.chooseCharacter2();
@@ -31,6 +31,7 @@ public class Battle3 extends Thread {
 				attackNoForCharacter1 = character1.selectAttack();
 				breakLine();
 			}
+			
 			if (!character2.isDead()) {
 				attackNoForCharacter2 = character2.selectAttack();
 				breakLine();
@@ -56,22 +57,7 @@ public class Battle3 extends Thread {
 				break;
 			}
 
-			if (!character1.isDead() && !character2.isDead()) {
-				int oneOrTwo = new Random().nextInt(2) + 1;
-
-				switch (oneOrTwo) {
-					case 1:
-						mario.callAttack(character1);
-						break;
-					case 2:
-						mario.callAttack(character2);
-						break;
-				}
-			} else if (character1.isDead()) {
-				mario.callAttack(character2);
-			} else if (character2.isDead()) {
-				mario.callAttack(character1);
-			}
+			mario.callAttack(character1, character2);
 			
 			breakLine();
 
