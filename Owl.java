@@ -7,8 +7,12 @@ public class Owl extends Thread implements Character {
 
 	private String namae = "フクロウ";
 
-	public int selectAttack() {
+	private int selectedAttackNumber = 0;
+
+	public void selectAttack() {
+		
 		System.out.println("フクロウの攻撃を選択");
+
 		int input = 0;
 
 		do {
@@ -16,11 +20,11 @@ public class Owl extends Thread implements Character {
 			input = new Scanner(System.in).nextInt();
 		} while (input < 1 || input > 3);
 		
-		return input;
+		selectedAttackNumber = input;
 	}
 
-	public void callAttack(int i, Mario mar, Character c1, Character c2) {
-		switch (i) {
+	public void callAttack(Mario mar, Character c1, Character c2) {
+		switch (selectedAttackNumber) {
 			case 1:
 				attack1(mar);
 				break;
@@ -30,8 +34,9 @@ public class Owl extends Thread implements Character {
 			case 3:
 				specialAttack(c1, c2);
 		}
-	}
 
+		selectedAttackNumber = 0;
+	}
 
 	public void attack1(Mario mar) {
 		System.out.println("フクロウは冷たい風を巻き起こした！");

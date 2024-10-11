@@ -5,9 +5,9 @@
 //インターフェースは簡単に言えば特に抽象度の高い抽象クラス
 
 public interface Character {
-	public abstract int selectAttack();
+	public abstract void selectAttack();
 
-	public abstract void callAttack(int i, Mario mar, Character c1, Character c2);
+	public abstract void callAttack(Mario mar, Character c1, Character c2);
 
 	public abstract void attack1(Mario mar);
 

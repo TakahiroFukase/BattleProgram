@@ -6,7 +6,9 @@ public class Wizard implements Character {
 	private int mp = 0; //必殺技は3たまると使える
 	private String namae = "魔法使い";
 
-	public int selectAttack() {
+	private int selectedAttackNumber = 0;
+
+	public void selectAttack() {
 		
 		int input = 0;
 		
@@ -29,11 +31,11 @@ public class Wizard implements Character {
 			input = new Scanner(System.in).nextInt();
 		}
 
-		return input;
+		selectedAttackNumber = input;
 	}
 
-	public void callAttack(int i, Mario mar, Character c1, Character c2) {
-		switch (i) {
+	public void callAttack(Mario mar, Character c1, Character c2) {
+		switch (selectedAttackNumber) {
 			case 1:
 				attack1(mar);
 				break;
@@ -43,6 +45,8 @@ public class Wizard implements Character {
 			case 3:
 				specialAttack(mar);
 		}
+
+		selectedAttackNumber = 0;
 	}
 
 	public void attack1(Mario mar) {

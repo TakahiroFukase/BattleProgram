@@ -11,7 +11,7 @@ public class Mario {
 
 		if (characterToAttack == null) {
 			// ここに入ることは基本あり得ないが、一応ケアしておく
-			return；
+			return;
 		}
 
 		int oneOrTwo = new Random().nextInt(2) + 1;

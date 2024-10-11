@@ -9,8 +9,12 @@ public class Ebiwara extends Thread implements Character {
 
 	private boolean anounce = true;
 
-	public int selectAttack() {
+	private int selectedAttackNumber = 0;
+
+	public void selectAttack() {
+
 		System.out.println("エビワラーの攻撃を選択");
+
 		int input = 0;
 		
 		if (this.hp >= 500) {
@@ -29,11 +33,12 @@ public class Ebiwara extends Thread implements Character {
 				input = 4;
 			}
 		}
-		return input;
+
+		selectedAttackNumber = input;
 	}
 
-	public void callAttack(int i, Mario mar, Character c1, Character c2) {
-		switch (i) {
+	public void callAttack(Mario mar, Character c1, Character c2) {
+		switch (selectedAttackNumber) {
 			case 1:
 				attack1(mar);
 				break;
@@ -46,6 +51,8 @@ public class Ebiwara extends Thread implements Character {
 			case 4:
 				doNothing();
 		}
+
+		selectedAttackNumber = 0;
 	}
 
 
@@ -58,7 +65,6 @@ public class Ebiwara extends Thread implements Character {
 		System.out.println("マリオに" + damage + "のダメージ");
 		mar.setHp(damage); //ここでMarioのsetterから、Marioのhpにアクセスする
 	}
-
 
 	public void attack2(Mario mar) {
 
@@ -77,7 +83,6 @@ public class Ebiwara extends Thread implements Character {
 		System.out.println("マリオに" + damage + "のダメージ");
 		mar.setHp(damage);
 	}
-
 
 	public void specialAttack(Mario mar) {
 

@@ -6,7 +6,9 @@ public class PrimitiveMan implements Character {
 
 	private String namae = "原始人";
 
-	public int selectAttack() {
+	private int selectedAttackNumber = 0;
+
+	public void selectAttack() {
 
 		boolean correct = true;
 		int input = 0;
@@ -23,11 +25,11 @@ public class PrimitiveMan implements Character {
 			}
 		} while (!(correct));
 
-		return input;
+		selectedAttackNumber = input;
 	}
 
-	public void callAttack(int i, Mario mar, Character c1, Character c2) {
-		switch (i) {
+	public void callAttack(Mario mar, Character c1, Character c2) {
+		switch (selectedAttackNumber) {
 			case 1 :
 				attack1(mar);
 				break;
@@ -37,6 +39,8 @@ public class PrimitiveMan implements Character {
 			case 3:
 				specialAttack(mar);//原始人の場合はこれも普通の攻撃
 		}
+
+		selectedAttackNumber = 0;
 	}
 
 	public void attack1(Mario mar) {

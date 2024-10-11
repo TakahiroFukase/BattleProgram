@@ -23,31 +23,28 @@ public class Battle3 extends Thread {
 		while (!(character1.isDead() && character2.isDead()) || (mario.isDead())) { //勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
 
 			showStatus(mario, character1, character2);
-			
-			int attackNoForCharacter1 = 0;
-			int attackNoForCharacter2 = 0;
 
 			if (!character1.isDead()) {
-				attackNoForCharacter1 = character1.selectAttack();
+				character1.selectAttack();
 				breakLine();
 			}
-			
+
 			if (!character2.isDead()) {
-				attackNoForCharacter2 = character2.selectAttack();
+				character2.selectAttack();
 				breakLine();
 			}
 
 			sleep(800);
 
 			if (!character1.isDead()) {
-				character1.callAttack(attackNoForCharacter1, mario, character1, character2);
+				character1.callAttack(mario, character1, character2);
 				breakLine();
 
 				sleep(1400);
 			}
 
 			if (!character2.isDead()) {
-				character2.callAttack(attackNoForCharacter2, mario, character1, character2);
+				character2.callAttack(mario, character1, character2);
 				breakLine();
 
 				sleep(1400);
