@@ -60,7 +60,7 @@ public class Ebiwara extends Thread implements Character {
 		int damage = 0;
 		System.out.println("エビワラーのファイア・パンチ！！！");
 
-		int r = new java.util.Random().nextInt(50) + 1;
+		int r = new Random().nextInt(50) + 1;
 		damage = 120 + r;
 		System.out.println("マリオに" + damage + "のダメージ");
 		mar.setHp(damage); //ここでMarioのsetterから、Marioのhpにアクセスする
@@ -90,11 +90,8 @@ public class Ebiwara extends Thread implements Character {
 		System.out.println("エビワラーは連続パンチを繰り出した！");
 		for(int i = 3; i > 0; i--) {
 			System.out.println(i);
-			try {
-				Thread.sleep(700);
-			} catch (InterruptedException g) {
-				// NOP
-			}			
+
+			Util.sleep(700);		
 		}
 
 		int r = new Random().nextInt(3) + 1;

@@ -55,11 +55,7 @@ public class Mario {
 		character.setHp(150);
 
 		if (character.isDead()) {
-			try {
-				Thread.sleep(1400);
-			} catch (InterruptedException g) {
-				// NOP
-			}
+			Util.sleep(1400);
 
 			System.out.println(character.getNamae() + "は息絶えた。。。");
 		}
@@ -72,11 +68,8 @@ public class Mario {
 		character.setHp(200);
 
 		if (character.isDead()) {
-			try {
-				Thread.sleep(1400);
-			} catch (InterruptedException g) {
-				// NOP
-			}
+			Util.sleep(1400);
+
 			System.out.println(character.getNamae() + "は息絶えた。。。");
 		}
 	}

@@ -53,11 +53,7 @@ public class Owl extends Thread implements Character {
 		System.out.println("フクロウは仲間を呼んだ！！！");
 		int r = new Random().nextInt(5) + 1;
 		
-		try {
-			Thread.sleep(1900);
-		} catch (InterruptedException g) {
-			// NOP
-		}			
+		Util.sleep(1900);		
 
 		switch (r) {
 			case 1:
@@ -91,20 +87,12 @@ public class Owl extends Thread implements Character {
 		int recover2 = (30 + r2);
 
 		System.out.println("フクロウは癒しの風を巻き起こした！！");
-		
-		try {
-			Thread.sleep(1900);
-		} catch (InterruptedException g) {
-			// NOP
-		}			
+
+		Util.sleep(1900);		
 
 		System.out.println(c1.getNamae() + "のHPが" + recover1 + "回復した！！");
 		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException g) {
-			// NOP
-		}	
+		Util.sleep(1000);
 
 		System.out.println(c2.getNamae() + "のHPが" + recover2 + "回復した！！");
 

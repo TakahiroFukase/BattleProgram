@@ -10,7 +10,7 @@ public class Battle3 extends Thread {
 
 	public static void main(String[] args) {
 
-		println("\n使用キャラクターを2体選択");
+		System.out.println("\n使用キャラクターを2体選択");
 
 		CharacterPicker characterPicker = new CharacterPicker();
 		Character character1 = characterPicker.chooseCharacter1();
@@ -20,7 +20,7 @@ public class Battle3 extends Thread {
 
 		Referee referee = new Referee(mario, character1, character2);
 
-		println("\n敵のマリオが現れた！！！");
+		System.out.println("\n敵のマリオが現れた！！！");
 
 		while (referee.isGameInProgress()) { //勝負が続く限り（＝両者とも生きている限り）以下のループを繰り返す
 
@@ -28,28 +28,28 @@ public class Battle3 extends Thread {
 
 			if (character1.isSurviving()) {
 				character1.selectAttack();
-				breakLine();
+				Util.breakLine();
 			}
 
 			if (character2.isSurviving()) {
 				character2.selectAttack();
-				breakLine();
+				Util.breakLine();
 			}
 
-			sleep(800);
+			Util.sleep(800);
 
 			if (character1.isSurviving()) {
 				character1.callAttack(mario, character1, character2);
-				breakLine();
+				Util.breakLine();
 
-				sleep(1400);
+				Util.sleep(1400);
 			}
 
 			if (character2.isSurviving()) {
 				character2.callAttack(mario, character1, character2);
-				breakLine();
+				Util.breakLine();
 
-				sleep(1400);
+				Util.sleep(1400);
 			}
 
 			if (mario.isDead()) {
@@ -58,32 +58,12 @@ public class Battle3 extends Thread {
 
 			mario.callAttack(character1, character2);
 			
-			breakLine();
+			Util.breakLine();
 
-			sleep(2000);
+			Util.sleep(2000);
 		}
 
 		referee.announceStatus();
 		referee.announceVictory();
-	}
-
-	private static void print(String text) {
-		System.out.print(text);
-	}
-
-	private static void println(String text) {
-		System.out.println(text);
-	}
-
-	private static void breakLine() {
-		println(" ");
-	}
-
-	public static void sleep(long millis) {
-		try {
-			Thread.sleep(millis);
-		} catch (InterruptedException g) {
-			// NOP
-		}
 	}
 }
