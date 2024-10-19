@@ -70,25 +70,16 @@ public class Wizard implements Character {
 	}
 
 	public void specialAttack(Mario mar) {
-		this.mp = 0;
-		int damage = 0;
 		System.out.println("魔法使いは光線を放った！！");
 		System.out.println("光線は大爆発を起こした！！！");
-		int r = new Random().nextInt(3) + 1;
-		
-		switch (r) {
-			case 1:
-				damage = 620;
-				break;
-			case 2:
-				damage = 680;
-				break;
-			case 3:
-				damage = 720;
-		}
+
+		int[] damageChoices = {620, 680, 720};
+		int damage = Util.pickRandomly(damageChoices);
 
 		System.out.println("マリオに" + damage + "のダメージ");
 		mar.setHp(damage);
+
+		this.mp = 0;
 	}
 
 	public int getHp() {

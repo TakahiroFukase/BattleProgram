@@ -40,11 +40,13 @@ public class Owl extends Thread implements Character {
 
 	public void attack1(Mario mar) {
 		System.out.println("フクロウは冷たい風を巻き起こした！");
-		int r = new Random().nextInt(20) + 1;
-		int damage = 100 + r;
-		System.out.println("マリオに" + damage + "のダメージ");
 
-		mar.setHp(damage); //ここでMarioのsetterから、Marioのhpにアクセスする
+		int fixedDamage = 100;
+		int randomDamage = new Random().nextInt(20) + 1;
+		int totalDamage = fixedDamage + randomDamage;
+
+		System.out.println("マリオに" + totalDamage + "のダメージ");
+		mar.setHp(totalDamage);
 	}
 
 	public void attack2(Mario mar) {

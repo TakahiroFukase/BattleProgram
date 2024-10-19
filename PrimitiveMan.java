@@ -44,9 +44,9 @@ public class PrimitiveMan implements Character {
 	}
 
 	public void attack1(Mario mar) {
-		int damage = 0;
-
 		System.out.println("原始人のブーメラン攻撃！！");
+
+		int damage = 0;
 
 		int r = new Random().nextInt(5) + 1;
 		
@@ -65,15 +65,17 @@ public class PrimitiveMan implements Character {
 				System.out.println("マリオに350のダメージ！");
 				damage = 350;
 		}
+
 		mar.setHp(damage);
 	}
 
 	public void attack2(Mario mar) {
-		int r = new Random().nextInt(5) + 1;
-		int damage = 50 * r;
-
 		System.out.println("原始人は石を投げつけた！");
-		System.out.println("石は" + r + "つ命中した！");
+
+		int random = new Random().nextInt(5) + 1;
+		int damage = 50 * random;
+		
+		System.out.println("石は" + random + "つ命中した！");
 		System.out.println("マリオに" + damage + "のダメージ！！");
 
 		mar.setHp(damage);

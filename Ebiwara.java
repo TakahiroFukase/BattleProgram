@@ -57,29 +57,23 @@ public class Ebiwara extends Thread implements Character {
 
 
 	public void attack1(Mario mar) {
-		int damage = 0;
 		System.out.println("エビワラーのファイア・パンチ！！！");
 
-		int r = new Random().nextInt(50) + 1;
-		damage = 120 + r;
-		System.out.println("マリオに" + damage + "のダメージ");
-		mar.setHp(damage); //ここでMarioのsetterから、Marioのhpにアクセスする
+		int fixedDamage = 120;
+		int randomDamage = new Random().nextInt(50) + 1;
+		int totalDamage = fixedDamage + randomDamage;
+
+		System.out.println("マリオに" + totalDamage + "のダメージ");
+		mar.setHp(totalDamage);
 	}
 
 	public void attack2(Mario mar) {
 
-		int damage = 0;
 		System.out.println("エビワラーのかみなりパンチ！！！");
-		int r = new Random().nextInt(2) + 1;
 
-		switch (r) {
-			case 1:
-				damage = 50;
-				break;
-			case 2:
-				damage = 250;
-				break;
-		}
+		int[] damageChoices = {50, 250};
+		int damage = Util.pickRandomly(damageChoices);
+		
 		System.out.println("マリオに" + damage + "のダメージ");
 		mar.setHp(damage);
 	}
