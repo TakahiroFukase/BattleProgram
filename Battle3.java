@@ -4,9 +4,7 @@
 //クラスは神様のクラス、マリオのクラス、エビワラーのクラスの３つで作ってみる
 //そして、マリオとエビワラーをインスタンス化し、神様のクラス上で操作する。
 
-import java.util.*;
-
-public class Battle3 extends Thread {
+public class Battle3 {
 
 	public static void main(String[] args) {
 
